@@ -84,13 +84,13 @@ select {
   width: 100%; }
 
 /* Grid HTML Classes */
-/*.row {
+.row {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 62.5em;
+  max-width: 75em;
   *zoom: 1; }
   .row:before, .row:after {
     content: " ";
@@ -125,7 +125,7 @@ select {
         content: " ";
         display: table; }
       .row .row.collapse:after {
-        clear: both; }*/
+        clear: both; }
 
 .column,
 .columns {

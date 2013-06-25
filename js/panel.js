@@ -4,14 +4,26 @@ Education.Collections.Panel = Backbone.Collection.extend({
   model: Education.Models.Api
 });
 
-Education.Views.PanelView = Backbone.View.extend({
+Education.Views.PanelLeftView = Backbone.View.extend({
 
-  el: '#panel',
-
-  template: window.JST['panel/panel'],
+  template: window.JST['panel/leftpanel'],
 
   initialize: function(options) {
+    this.render();
+  },
 
+  render: function() {
+    this.$el.html(this.template(this.model.toJSON()));
+    return this;
+  }
+})
+
+Education.Views.PanelRightView = Backbone.View.extend({
+
+  template: window.JST['panel/rightpanel'],
+
+  initialize: function(options) {
+    this.render();
   },
 
   render: function() {

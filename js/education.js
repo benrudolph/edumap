@@ -5,13 +5,14 @@ window.Education = {
   Collections: {}
 }
 
-var width = 960,
+var width = 580,
     height = 580;
 
-var projection = d3.geo.kavrayskiy7()
+var projection = d3.geo.orthographic()
     .scale(170)
     .translate([width / 2, height / 2])
-    .precision(.1);
+    .precision(.1)
+    .clipAngle(90);
 
 var path = d3.geo.path()
     .projection(projection);
@@ -36,22 +37,48 @@ function map() {
   return my;
 }
 
-d3.json("world3.json", function(error, world) {
-  var countries = world.features
 
-  svg.selectAll(".country")
-    .data(countries)
-    .call(map())
+Education.Routers.MainRouter = Backbone.Router.extend({
+  initialize: function() {
+    queue()
+      .defer(d3.json, 'data/world.json')
+      .defer(d3.json, 'data/fake.json')
+      .await(function(error, world, countryData) {
+        this.countries = world.features;
+        this.countryData = countryData.countries;
 
+        svg.selectAll(".country")
+          .data(this.countries)
+          .call(map())
+
+        this.rightpanel = new Education.Views.PanelRightView({
+          model: new Education.Models.Panel(this.countryData[0]),
+          el: '#rightpanel'
+        });
+        this.leftpanel = new Education.Views.PanelLeftView({
+          model: new Education.Models.Panel(this.countryData[0]),
+          el: '#leftpanel'
+        });
+
+      }.bind(this))
+  },
+
+  routes: {
+    '': 'index'
+  },
+
+  index: function() {
+
+  }
 });
+
 
 $(document).ready(function() {
 
-  var country = new Education.Models.Panel({ name: 'United States' });
+  window.router = new Education.Routers.MainRouter();
+  Backbone.history.start();
 
-  var view = new Education.Views.PanelView({ model: country });
-
-  view.render();
+  $(document).foundation();
 
 })
 

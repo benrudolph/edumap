@@ -1,100 +1,73 @@
-body {
-  background: #fcfcfa;
-  margin: 0px;
-}
-
-li {
-  list-style-type: none;
-}
-
-h1 {
-  font-variant: small-caps;
-  margin: 0px;
-  float: left;
-  font-weight: 300;
-}
-
-
-.country {
-  stroke: black;
-  stroke-width: 1px;
-}
-
-.land {
-  fill: #222;
-}
-
-.boundary {
-  fill: none;
-  stroke: #fff;
-  stroke-width: .5px;
-}
-
-#header {
-  height: 50px;
-  background-color: #7f8c8d;
-  border-bottom: 2px solid #7f8c8d;
-  width: 100%;
-  padding-left: 50px;
-}
-
-#header h1 {
-  padding-top: 7px;
-  color: #fcfcfa;
-}
-
-#content {
-  width: 1400px;
-  height: 470px;
-  margin: 30px 0;
-}
-
-#map {
-  float: left;
-  width: 960px;
-  height: 470px;
+.title-area .name h1 {
+  color: white;
+  padding: 0 10px;
 }
 
 #timeline {
-  width: 100%;
-  height: 60px;
-  background-color: #7f8c8d;
+  background-color: #111111;
+  padding: 0px;
+  color: white;
 }
 
-#panel {
-  float: left;
-  width: 360px;
-  height: 470px;
-  padding: 0px 30px;
-  color: rgb(44, 62, 80);
-  background-color: #fcfcfa;
-  border-left: 1px solid #7f8c8d;
-}
-
-#panel .header {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-#panel .country-name {
-  float: left;
-  margin-left: 10px;
-}
-
-#panel .f32 {
-  float: left;
-}
-
-#panel .demographic-info {
-  margin-bottom: 10px;
-}
-
-#panel .stats {
-  float: left;
-  margin-left: 20px;
-}
-
-.row {
+.myrow {
   float: left;
   clear: both;
 }
+
+/* Panel */
+
+
+.header .country-name {
+  padding-left: 15px;
+  font-size: 26px;
+}
+
+.stat-population:before {
+  content: 'Population: '
+}
+
+.stat-budget:before {
+  content: 'Budget: '
+}
+
+.stat-partners:before {
+  content: 'Partners: '
+}
+
+.stat:before {
+  font-weight: bold;
+}
+
+.mycontainer {
+  padding: 10px;
+  border-bottom: 1px solid rgb(204, 204, 204);
+  width: 100%;
+}
+
+.header {
+  padding-top: 0px;
+}
+
+.infographic {
+  height: 130px;
+}
+
+.chart {
+  height: 100px;
+}
+
+.articles {
+  height: 150px;
+}
+
+.challenge {
+  padding-left: 10px;
+}
+
+.panel {
+  background-color: rgb(239, 239, 239);
+  border: 1px solid rgb(204, 204, 204);
+  padding: 10px 0;
+}
+
+/* End panel */

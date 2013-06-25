@@ -1,0 +1,76 @@
+{
+  "countries": [
+  {
+    "name": "zambia",
+    "iso": "ZMB",
+    "indicators": [
+    {
+      "name": "primary",
+      "series": [
+      {
+        "year": "2012",
+        "budget": "24409980",
+        "percent": ".75"
+      },
+      {
+        "year": "2013",
+        "budget": "24409980",
+        "percent": ".75"
+      },
+      {
+        "year": "2014",
+        "budget": "24409980",
+        "percent": ".75"
+      },
+      {
+        "year": "2015",
+        "budget": "24409980",
+        "percent": ".75"
+      },
+      {
+        "year": "2016",
+        "budget": "24409980",
+        "percent": ".75"
+      }
+      ]
+    }
+    ]
+  },
+  {
+    "name": "uganda",
+    "iso": "UGA",
+    "indicators": [
+    {
+      "name": "primary",
+      "series": [
+      {
+        "year": "2012",
+        "budget": "14409980",
+        "percent": ".5"
+      },
+      {
+        "year": "2013",
+        "budget": "14409980",
+        "percent": ".5"
+      },
+      {
+        "year": "2014",
+        "budget": "14409980",
+        "percent": ".5"
+      },
+      {
+        "year": "2015",
+        "budget": "14409980",
+        "percent": ".5"
+      },
+      {
+        "year": "2016",
+        "budget": "14409980",
+        "percent": ".5"
+      }
+      ]
+    }
+    ]
+  }
+  ]
+}

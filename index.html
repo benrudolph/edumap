@@ -1,34 +1,65 @@
 <!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="js/foundation/css/normalize.css" />
-  <link rel="stylesheet" href="js/foundation/css/foundation.css" />
+  <link rel="stylesheet" href="css/foundation.css" />
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="flags/flags32.css" />
 
+  <script src="js/vendor/custom.modernizr.js"></script>
 
 </head>
-<body>
-  <div id="header" class="row">
-    <h1>UNHCR Protection Strategy Mapping</h1>
+<body class="antialiased">
+  <nav id="header" class="top-bar">
+    <ul class="title-area">
+      <li class="name"><h1>UNHCR Protection Strategy Mapping</h1></li>
+    </ul>
     <div class="share"></div>
-  </div>
+
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li class="divider"></li>
+          <li class="has-dropdown"><a href="#">Programs</a>
+
+          <ul class="dropdown">
+            <li><a href="#">Education</a></li>
+            <li><a href="#">SGBV</a></li>
+            <li><a href="#">Child Protection</a></li>
+            <li class="divider"></li>
+            <li><a href="#">All Programs</a></li>
+          </ul>
+        </li>
+        <li class="divider"></li>
+      </ul>
+    </section>
+  </nav>
   <div id="content" class="row">
-    <div id="map"></div>
-    <div id="panel"></div>
+    <div id="leftpanel" class="panel large-3 columns"></div>
+    <div id="map" class="large-6 columns"></div>
+    <div id="rightpanel" class="panel large-3 columns"></div>
   </div>
-  <div id="timeline" class="row"></div>
-  <div id="filters" class="row"></div>
+  <div id="timeline">
+    <div class="row full-width">
+      <div class="large-12 columns">
+        <p>Timeline</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Load scripts -->
+  <script src="lib/jquery.js"></script>
+  <script src="lib/queue.v1.min.js"></script>
+  <script src="js/foundation.min.js"></script>
+
   <script src="js/foundation/foundation.js"></script>
-  <script src="js/foundation/foundation.dropdown.js"></script>
+  <script src="js/foundation/foundation.forms.js"></script>
 
   <script src="d3/d3.v3.js"></script>
   <script src="d3/d3.geo.projection.v0.min.js"></script>
   <script src="d3/topojson.v1.min.js"></script>
-  <script src="lib/jquery.js"></script>
   <script src="lib/underscore.js"></script>
   <script src="lib/backbone.js"></script>
   <script src="templates/templates.js"></script>
