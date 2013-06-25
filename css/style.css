@@ -1,0 +1,82 @@
+body {
+  background: #fcfcfa;
+  margin: 0px;
+  font-family: "Apercu Regular", Calibri, sans-serif;
+  font-weight: 300;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1 {
+  font-variant: small-caps;
+  margin: 0px;
+  float: left;
+  font-weight: 300;
+}
+
+
+.country {
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.land {
+  fill: #222;
+}
+
+.boundary {
+  fill: none;
+  stroke: #fff;
+  stroke-width: .5px;
+}
+
+#header {
+  float: left;
+  clear: both;
+  height: 50px;
+  background-color: #3498db;
+  border-bottom: 2px solid #2980b9;
+  width: 100%;
+  padding-left: 50px
+}
+
+#header h1 {
+  padding-top: 7px;
+  color: white;
+}
+
+#map {
+  float: left;
+  width: 960px;
+  height: 500px;
+}
+
+#panel {
+  float: left;
+  width: 400px;
+  height: 500px;
+  padding: 15px;
+  background-color: #34495e;
+  color: white;
+}
+
+#panel .header {
+  font-size: 30px;
+}
+
+#panel .flag-container {
+  float: left;
+  width: 160px;
+  height: 100px;
+}
+
+#panel .stats {
+  float: left;
+}
+
+.row {
+  float: left;
+  clear: both;
+}
