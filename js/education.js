@@ -57,10 +57,13 @@ Education.Routers.MainRouter = Backbone.Router.extend({
         });
         this.leftpanel = new Education.Views.PanelLeftView({
           model: new Education.Models.Panel(this.countryData[0]),
+          collection: new Education.Collections.Panel(this.countryData),
           el: '#leftpanel'
         });
 
+        $(document).foundation();
       }.bind(this))
+
   },
 
   routes: {
@@ -78,7 +81,6 @@ $(document).ready(function() {
   window.router = new Education.Routers.MainRouter();
   Backbone.history.start();
 
-  $(document).foundation();
 
 })
 
