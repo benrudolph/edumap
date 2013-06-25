@@ -38,17 +38,6 @@ window.JST['panel/leftpanel'] = _.template([
     '</div>',
     '<div class="budget-graph myrow mycontainer">',
     '</div>',
-    '<div class="challenge-container myrow mycontainer">',
-      '<span class="challenge-header myrow left">Main Challenges</span>',
-      '<div class="challenge-list myrow left">',
-        '<span class="myrow challenge">My first challenge</span>',
-        '<span class="myrow challenge">My second challenge</span>',
-        '<span class="myrow challenge">My third challenge</span>',
-      '</div>',
-    '</div>',
-    '<div class="infographic myrow mycontainer">Infographic</div>',
-    '<div class="chart myrow mycontainer">Chart</div>',
-    '<div class="articles myrow mycontainer">Articles</div>',
   '</div>'
 ].join(''));
 
