@@ -2,9 +2,11 @@ window.JST = {}
 
 window.JST['panel/panel'] = _.template([
   '<div class="inner-panel">',
-    '<div class="header row"><%= name %></div>',
+    '<div class="header row">',
+      '<div class="f32"><div class="flag us" /></div>',
+      '<div class="country-name"><%= name %></div>',
+    '</div>',
     '<div class="demographic-info row">',
-      '<div class="flag-container"><img src="img/<%= name %>.jpg" /></div>',
       '<div class="stats">',
         '<span class="stat row">Some stat</span>',
         '<span class="stat row">Some stat</span>',

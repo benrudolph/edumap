@@ -20,6 +20,8 @@ var svg = d3.select("#map").append("svg")
     .attr("width", width)
     .attr("height", height);
 
+var color = d3.scale.category10();
+
 function map() {
 
   function my(selection) {
@@ -27,7 +29,7 @@ function map() {
       .attr("class", "country")
       .attr("d", path)
       .style("fill", function(d, i) {
-        return "white"
+        return color(Math.floor(Math.random() * 5));
       });
   };
 

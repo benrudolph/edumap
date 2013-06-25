@@ -1,8 +1,6 @@
 body {
   background: #fcfcfa;
   margin: 0px;
-  font-family: "Apercu Regular", Calibri, sans-serif;
-  font-weight: 300;
 }
 
 li {
@@ -33,47 +31,67 @@ h1 {
 }
 
 #header {
-  float: left;
-  clear: both;
   height: 50px;
-  background-color: #3498db;
-  border-bottom: 2px solid #2980b9;
+  background-color: #7f8c8d;
+  border-bottom: 2px solid #7f8c8d;
   width: 100%;
-  padding-left: 50px
+  padding-left: 50px;
 }
 
 #header h1 {
   padding-top: 7px;
-  color: white;
+  color: #fcfcfa;
+}
+
+#content {
+  width: 1400px;
+  height: 470px;
+  margin: 30px 0;
 }
 
 #map {
   float: left;
   width: 960px;
-  height: 500px;
+  height: 470px;
+}
+
+#timeline {
+  width: 100%;
+  height: 60px;
+  background-color: #7f8c8d;
 }
 
 #panel {
   float: left;
-  width: 400px;
-  height: 500px;
-  padding: 15px;
-  background-color: #34495e;
-  color: white;
+  width: 360px;
+  height: 470px;
+  padding: 0px 30px;
+  color: rgb(44, 62, 80);
+  background-color: #fcfcfa;
+  border-left: 1px solid #7f8c8d;
 }
 
 #panel .header {
   font-size: 30px;
+  margin-bottom: 10px;
 }
 
-#panel .flag-container {
+#panel .country-name {
   float: left;
-  width: 160px;
-  height: 100px;
+  margin-left: 10px;
+}
+
+#panel .f32 {
+  float: left;
+}
+
+#panel .demographic-info {
+  margin-bottom: 10px;
 }
 
 #panel .stats {
   float: left;
+  margin-left: 20px;
 }
 
 .row {

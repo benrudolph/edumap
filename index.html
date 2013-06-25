@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="js/foundation/css/normalize.css" />
+  <link rel="stylesheet" href="js/foundation/css/foundation.css" />
+
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="flags/flags.css">
+  <link rel="stylesheet" type="text/css" href="flags/flags32.css" />
+
+
 </head>
 <body>
-  <div id="header">
+  <div id="header" class="row">
     <h1>UNHCR Protection Strategy Mapping</h1>
     <div class="share"></div>
   </div>
-  <div id="map"></div>
-  <div id="panel"></div>
+  <div id="content" class="row">
+    <div id="map"></div>
+    <div id="panel"></div>
+  </div>
+  <div id="timeline" class="row"></div>
+  <div id="filters" class="row"></div>
 
   <!-- Load scripts -->
+  <script src="js/foundation/foundation.js"></script>
+  <script src="js/foundation/foundation.dropdown.js"></script>
+
   <script src="d3/d3.v3.js"></script>
   <script src="d3/d3.geo.projection.v0.min.js"></script>
   <script src="d3/topojson.v1.min.js"></script>
