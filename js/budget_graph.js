@@ -14,6 +14,10 @@ function budgetGraph(config) {
         .range([height, 0])
         .domain([0, 30000000]);
 
+    var data = config.data;
+
+    var selection = config.selection;
+
     var xAxis = d3.svg.axis()
       .scale(x)
       .orient("bottom")
@@ -33,23 +37,33 @@ function budgetGraph(config) {
       })
       .interpolate('cardinal');
 
+    var svg = selection.append('svg')
+      .attr('width', config.width)
+      .attr('height', config.height)
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
 
     function my() {
 
-       var svg = config.selection.append('svg')
-          .attr('width', this.budgetConfig.width)
-          .attr('height', this.budgetConfig.height)
-          .append("g")
-          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      var lines = svg.selectAll('.budget-line')
+        .data(data)
 
-       svg.selectAll('.budget-line')
-         .data(config.data)
-         .enter().append('path')
-         .style('fill', 'none')
-         .style('stroke', 'black')
-         .style('stroke-width', 1)
-         .attr('class', 'budget-line')
-         .attr('d', lineFn);
+      lines.enter().append('path')
+
+      lines
+        .attr('class', 'budget-line')
+        .on('click', function(d) {
+          var budgetLine = d3.select(this);
+          budgetLine.classed('selected', !budgetLine.classed('selected'));
+        })
+
+      lines
+        .transition()
+        .duration(500)
+          .attr('d', lineFn);
+
+      lines.exit().remove();
 
       svg.append("g")
         .attr("class", "x axis")
@@ -67,6 +81,12 @@ function budgetGraph(config) {
           .text("Price ($)");
 
 
+    }
+
+    my.data = function(_data) {
+      if (!arguments) return data;
+      data = _data;
+      return my;
     }
 
     return my;

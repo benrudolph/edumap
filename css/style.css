@@ -70,6 +70,17 @@
   padding: 10px 0;
 }
 
+.budget-line {
+  stroke: #aeaeae;
+  stroke-width: 1px;
+  fill: none;
+  cursor: pointer;
+}
+
+.budget-line.selected {
+  stroke: black;
+}
+
 /* End panel */
 
 .axis path,

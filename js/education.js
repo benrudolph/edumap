@@ -2,7 +2,8 @@ window.Education = {
   Models: {},
   Views: {},
   Routers: {},
-  Collections: {}
+  Collections: {},
+  Manager: {}
 }
 
 var width = 580,
@@ -40,6 +41,8 @@ function map() {
 
 Education.Routers.MainRouter = Backbone.Router.extend({
   initialize: function() {
+    this.manager = new Education.Models.Manager();
+
     queue()
       .defer(d3.json, 'data/world.json')
       .defer(d3.json, 'data/fake.json')
@@ -55,9 +58,11 @@ Education.Routers.MainRouter = Backbone.Router.extend({
           model: new Education.Models.Panel(this.countryData[0]),
           el: '#rightpanel'
         });
+
         this.leftpanel = new Education.Views.PanelLeftView({
           model: new Education.Models.Panel(this.countryData[0]),
           collection: new Education.Collections.Panel(this.countryData),
+          manager: this.manager,
           el: '#leftpanel'
         });
 

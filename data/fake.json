@@ -3,74 +3,132 @@
   {
     "name": "zambia",
     "iso": "ZMB",
-    "indicators": [
-    {
-      "name": "primary",
-      "series": [
-      {
-        "year": "2012",
-        "budget": "24409980",
-        "percent": ".75"
+    "indicators": {
+      "primary" : {
+        "series": [
+        {
+          "year": "2012",
+          "budget": "24409980",
+          "actual": ".75"
+        },
+        {
+          "year": "2013",
+          "budget": "22409980",
+          "actual": ".75"
+        },
+        {
+          "year": "2014",
+          "budget": "21409980",
+          "actual": ".75"
+        },
+        {
+          "year": "2015",
+          "budget": "14409980",
+          "actual": ".75"
+        },
+        {
+          "year": "2016",
+          "budget": "25409980",
+          "actual": ".75"
+        }
+        ]
       },
-      {
-        "year": "2013",
-        "budget": "22409980",
-        "percent": ".75"
-      },
-      {
-        "year": "2014",
-        "budget": "21409980",
-        "percent": ".75"
-      },
-      {
-        "year": "2015",
-        "budget": "14409980",
-        "percent": ".75"
-      },
-      {
-        "year": "2016",
-        "budget": "25409980",
-        "percent": ".75"
+      "secondary" : {
+        "series": [
+        {
+          "year": "2012",
+          "budget": "4409980",
+          "actual": ".75"
+        },
+        {
+          "year": "2013",
+          "budget": "2409980",
+          "actual": ".75"
+        },
+        {
+          "year": "2014",
+          "budget": "21409980",
+          "actual": ".75"
+        },
+        {
+          "year": "2015",
+          "budget": "4409980",
+          "actual": ".75"
+        },
+        {
+          "year": "2016",
+          "budget": "5409980",
+          "actual": ".75"
+        }
+        ]
+
       }
-      ]
     }
-    ]
   },
   {
     "name": "uganda",
     "iso": "UGA",
-    "indicators": [
-    {
-      "name": "primary",
-      "series": [
-      {
-        "year": "2012",
-        "budget": "11409980",
-        "percent": ".5"
-      },
-      {
-        "year": "2013",
-        "budget": "12409980",
-        "percent": ".5"
-      },
-      {
-        "year": "2014",
-        "budget": "14409980",
-        "percent": ".5"
-      },
-      {
-        "year": "2015",
-        "budget": "13409980",
-        "percent": ".5"
-      },
-      {
-        "year": "2016",
-        "budget": "15409980",
-        "percent": ".5"
-      }
+    "indicators": {
+      "primary": {
+        "series": [
+        {
+          "year": "2012",
+          "budget": "11409980",
+          "actual": ".5"
+        },
+        {
+          "year": "2013",
+          "budget": "12409980",
+          "actual": ".5"
+        },
+        {
+          "year": "2014",
+          "budget": "14409980",
+          "actual": ".5"
+        },
+        {
+          "year": "2015",
+          "budget": "13409980",
+          "actual": ".5"
+        },
+        {
+          "year": "2016",
+          "budget": "15409980",
+          "actual": ".5"
+        }
       ]
+      },
+      "secondary": {
+        "series": [
+        {
+          "year": "2012",
+          "budget": "21409980",
+          "actual": ".5"
+        },
+        {
+          "year": "2013",
+          "budget": "22409980",
+          "actual": ".5"
+        },
+        {
+          "year": "2014",
+          "budget": "24409980",
+          "actual": ".5"
+        },
+        {
+          "year": "2015",
+          "budget": "23409980",
+          "actual": ".5"
+        },
+        {
+          "year": "2016",
+          "budget": "25409980",
+          "actual": ".5"
+        }
+      ]
+      }
+
     }
-    ]
   }
   ]
 }
