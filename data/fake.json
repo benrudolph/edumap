@@ -5,63 +5,165 @@
     "iso": "ZMB",
     "indicators": {
       "primary" : {
-        "series": [
+        "budgetseries": [
         {
           "year": "2012",
-          "budget": "24409980",
-          "actual": ".75"
+          "budget": "24409980"
         },
         {
           "year": "2013",
-          "budget": "22409980",
-          "actual": ".75"
+          "budget": "22409980"
         },
         {
           "year": "2014",
-          "budget": "21409980",
-          "actual": ".75"
+          "budget": "21409980"
         },
         {
           "year": "2015",
-          "budget": "14409980",
-          "actual": ".75"
+          "budget": "14409980"
         },
         {
           "year": "2016",
-          "budget": "25409980",
-          "actual": ".75"
+          "budget": "25409980"
         }
+        ],
+
+        "indicatorseries": [
+          [
+            {
+              "year": "2012",
+              "value": ".75",
+              "type": "actual"
+            },
+            {
+              "year": "2013",
+              "value": ".75",
+              "type": "actual"
+            },
+            {
+              "year": "2014",
+              "value": ".3",
+              "type": "actual"
+            },
+            {
+              "year": "2015",
+              "value": ".75",
+              "type": "actual"
+            },
+            {
+              "year": "2016",
+              "value": ".75",
+              "type": "actual"
+            }
+          ],
+          [
+            {
+              "year": "2012",
+              "value": ".5",
+              "type": "target"
+            },
+            {
+              "year": "2013",
+              "value": ".25",
+              "type": "target"
+            },
+            {
+              "year": "2014",
+              "value": ".3",
+              "type": "target"
+            },
+            {
+              "year": "2015",
+              "value": ".6",
+              "type": "target"
+            },
+            {
+              "year": "2016",
+              "value": ".8",
+              "type": "target"
+            }
+          ]
         ]
       },
       "secondary" : {
-        "series": [
-        {
-          "year": "2012",
-          "budget": "4409980",
-          "actual": ".75"
-        },
-        {
-          "year": "2013",
-          "budget": "2409980",
-          "actual": ".75"
-        },
-        {
-          "year": "2014",
-          "budget": "21409980",
-          "actual": ".75"
-        },
-        {
-          "year": "2015",
-          "budget": "4409980",
-          "actual": ".75"
-        },
-        {
-          "year": "2016",
-          "budget": "5409980",
-          "actual": ".75"
-        }
+        "budgetseries": [
+          {
+            "year": "2012",
+            "budget": "4409980"
+          },
+          {
+            "year": "2013",
+            "budget": "2409980"
+          },
+          {
+            "year": "2014",
+            "budget": "21409980"
+          },
+          {
+            "year": "2015",
+            "budget": "4409980"
+          },
+          {
+            "year": "2016",
+            "budget": "5409980"
+          }
+        ],
+        "indicatorseries": [
+        [
+          {
+            "year": "2012",
+            "value": ".75",
+            "type": "actual"
+          },
+          {
+            "year": "2013",
+            "value": ".75",
+            "type": "actual"
+          },
+          {
+            "year": "2014",
+            "value": ".75",
+            "type": "actual"
+          },
+          {
+            "year": "2015",
+            "value": ".75",
+            "type": "actual"
+          },
+          {
+            "year": "2016",
+            "value": ".75",
+            "type": "actual"
+          }
+        ],
+        [
+          {
+            "year": "2012",
+            "value": ".5",
+            "type": "target"
+          },
+          {
+            "year": "2013",
+            "value": ".25",
+            "type": "target"
+          },
+          {
+            "year": "2014",
+            "value": ".3",
+            "type": "target"
+          },
+          {
+            "year": "2015",
+            "value": ".6",
+            "type": "target"
+          },
+          {
+            "year": "2016",
+            "value": ".8",
+            "type": "target"
+          }
         ]
-
+      ]
       }
     }
   },
@@ -70,64 +172,176 @@
     "iso": "UGA",
     "indicators": {
       "primary": {
-        "series": [
+        "budgetseries": [
         {
           "year": "2012",
           "budget": "11409980",
+          "target": ".33",
           "actual": ".5"
         },
         {
           "year": "2013",
           "budget": "12409980",
+          "target": ".33",
           "actual": ".5"
         },
         {
           "year": "2014",
           "budget": "14409980",
+          "target": ".33",
           "actual": ".5"
         },
         {
           "year": "2015",
           "budget": "13409980",
+          "target": ".33",
           "actual": ".5"
         },
         {
           "year": "2016",
           "budget": "15409980",
+          "target": ".33",
           "actual": ".5"
         }
-      ]
+      ],
+      "indicatorseries": [
+          [
+          {
+            "year": "2012",
+            "value": ".75",
+            "type": "actual"
+          },
+          {
+            "year": "2013",
+            "value": ".75",
+            "type": "actual"
+          },
+          {
+            "year": "2014",
+            "value": ".75",
+            "type": "actual"
+          },
+          {
+            "year": "2015",
+            "value": ".75",
+            "type": "actual"
+          },
+          {
+            "year": "2016",
+            "value": ".75",
+            "type": "actual"
+          }
+          ],
+          [
+          {
+            "year": "2012",
+            "value": ".5",
+            "type": "target"
+          },
+          {
+            "year": "2013",
+            "value": ".25",
+            "type": "target"
+          },
+          {
+            "year": "2014",
+            "value": ".3",
+            "type": "target"
+          },
+          {
+            "year": "2015",
+            "value": ".6",
+            "type": "target"
+          },
+          {
+            "year": "2016",
+            "value": ".8",
+            "type": "target"
+          }
+          ]
+        ]
+
       },
       "secondary": {
-        "series": [
+        "budgetseries": [
         {
           "year": "2012",
-          "budget": "21409980",
-          "actual": ".5"
+          "budget": "21409980"
         },
         {
           "year": "2013",
-          "budget": "22409980",
-          "actual": ".5"
+          "budget": "22409980"
         },
         {
           "year": "2014",
-          "budget": "24409980",
-          "actual": ".5"
+          "budget": "24409980"
         },
         {
           "year": "2015",
-          "budget": "23409980",
-          "actual": ".5"
+          "budget": "23409980"
         },
         {
           "year": "2016",
-          "budget": "25409980",
-          "actual": ".5"
+          "budget": "25409980"
         }
-      ]
+      ],
+        "indicatorseries": [
+          [
+          {
+            "year": "2012",
+            "value": ".75",
+            "type": "actual"
+          },
+          {
+            "year": "2013",
+            "value": ".75",
+            "type": "actual"
+          },
+          {
+            "year": "2014",
+            "value": ".75",
+            "type": "actual"
+          },
+          {
+            "year": "2015",
+            "value": ".75",
+            "type": "actual"
+          },
+          {
+            "year": "2016",
+            "value": ".75",
+            "type": "actual"
+          }
+          ],
+          [
+          {
+            "year": "2012",
+            "value": ".5",
+            "type": "target"
+          },
+          {
+            "year": "2013",
+            "value": ".25",
+            "type": "target"
+          },
+          {
+            "year": "2014",
+            "value": ".3",
+            "type": "target"
+          },
+          {
+            "year": "2015",
+            "value": ".6",
+            "type": "target"
+          },
+          {
+            "year": "2016",
+            "value": ".8",
+            "type": "target"
+          }
+          ]
+        ]
       }
-
     }
   }
   ]

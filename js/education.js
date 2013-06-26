@@ -41,7 +41,20 @@ function map() {
 
 Education.Routers.MainRouter = Backbone.Router.extend({
   initialize: function() {
-    this.manager = new Education.Models.Manager();
+    window.manager = new Education.Models.Manager();
+
+    // Change country selected
+    window.manager.on('change:countryISO', function() {
+      console.log('change:countryISO');
+      this.leftpanel.renderIndicatorGraph();
+    }.bind(this));
+
+    // Change the indicator value
+    window.manager.on('change:indicator', function() {
+      console.log('change:indicator');
+      this.leftpanel.renderBudgetGraph();
+      this.leftpanel.renderIndicatorGraph();
+    }.bind(this), this);
 
     queue()
       .defer(d3.json, 'data/world.json')
@@ -62,7 +75,6 @@ Education.Routers.MainRouter = Backbone.Router.extend({
         this.leftpanel = new Education.Views.PanelLeftView({
           model: new Education.Models.Panel(this.countryData[0]),
           collection: new Education.Collections.Panel(this.countryData),
-          manager: this.manager,
           el: '#leftpanel'
         });
 

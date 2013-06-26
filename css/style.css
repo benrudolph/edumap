@@ -70,11 +70,19 @@
   padding: 10px 0;
 }
 
-.budget-line {
+.budget-line, .indicator-line {
   stroke: #aeaeae;
   stroke-width: 1px;
   fill: none;
   cursor: pointer;
+}
+
+.indicator-line.actual {
+  stroke: black;
+}
+
+.indicator-line.target {
+  stroke: blue;
 }
 
 .budget-line.selected {

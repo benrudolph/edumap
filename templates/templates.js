@@ -36,7 +36,8 @@ window.JST['panel/leftpanel'] = _.template([
         '</select>',
       '</form>',
     '</div>',
-    '<div class="budget-graph myrow mycontainer">',
+    '<div class="budget-graph myrow mycontainer"></div>',
+    '<div class="indicator-graph myrow mycontainer"></div>',
     '</div>',
   '</div>'
 ].join(''));

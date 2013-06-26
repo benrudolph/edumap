@@ -13,17 +13,14 @@ Education.Views.PanelLeftView = Backbone.View.extend({
   },
 
   initialize: function(options) {
-    this.manager = options.manager;
-    this.manager.on('change:indicator', function() {
-      this.budgetGraph.data(this.collection.map(function(d) {
-        return d.get('indicators')[this.manager.get('indicator')].series
-      }.bind(this)))
-      this.budgetGraph();
-
-      },
-      this);
 
     this.budgetConfig = {
+      margin: { top: 20, right: 20, bottom: 30, left: 50 },
+      width: 270,
+      height: 150
+    };
+
+    this.indicatorConfig = {
       margin: { top: 20, right: 20, bottom: 30, left: 50 },
       width: 270,
       height: 150
@@ -34,22 +31,60 @@ Education.Views.PanelLeftView = Backbone.View.extend({
   onIndicatorChange: function(e) {
     e.preventDefault();
     e.stopPropagation();
-    this.manager.set('indicator', this.$el.find('#indicator').val().toLowerCase());
+    window.manager.set('indicator', this.$el.find('#indicator').val().toLowerCase());
+  },
+
+  extractSeries: function(model, type) {
+    var series = model.get('indicators')[window.manager.get('indicator')][type]
+
+
+    //Add country iso to data
+    series.countryISO = model.get('iso');
+    return series;
   },
 
   render: function() {
     this.$el.html(this.template(this.model.toJSON()));
 
-    this.budgetConfig.selection = d3.select(this.el).select('.budget-graph')
-    this.budgetConfig.data = this.collection.map(function(d) {
-      return d.get('indicators')[this.manager.get('indicator')].series
-    }.bind(this))
 
-    this.budgetGraph = budgetGraph(this.budgetConfig);
-    this.budgetGraph();
+    this.initBudgetGraph();
+    this.renderBudgetGraph();
+
+    this.initIndicatorGraph();
+    this.renderIndicatorGraph();
+
 
     return this;
+  },
+
+  initBudgetGraph: function() {
+    this.budgetConfig.selection = d3.select(this.el).select('.budget-graph')
+    this.budgetGraph = budgetGraph(this.budgetConfig);
+
+  },
+
+  renderBudgetGraph: function() {
+    this.budgetGraph.data(this.collection.map(function(d) {
+      return this.extractSeries(d, 'budgetseries');
+    }.bind(this)))
+    this.budgetGraph();
+  },
+
+  initIndicatorGraph: function() {
+    //Render Indicator graph
+    this.indicatorConfig.selection = d3.select(this.el).select('.indicator-graph');
+    this.indicatorGraph = indicatorGraph(this.indicatorConfig);
+  },
+
+  renderIndicatorGraph: function() {
+    // Extracts indicator series that matches selected country
+    this.indicatorGraph.data( _.find(this.collection.map(function(d) {
+      return this.extractSeries(d, 'indicatorseries');
+    }.bind(this)), function(series) { return series.countryISO === window.manager.get('countryISO') }));
+
+    this.indicatorGraph();
   }
+
 })
 
 Education.Views.PanelRightView = Backbone.View.extend({

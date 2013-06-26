@@ -1,4 +1,4 @@
-function budgetGraph(config) {
+function indicatorGraph(config) {
 
     var margin = config.margin
     var width = config.width - config.margin.left - config.margin.right
@@ -12,7 +12,7 @@ function budgetGraph(config) {
 
     var y = d3.scale.linear()
         .range([height, 0])
-        .domain([0, 30000000]);
+        .domain([0, 1]);
 
     var data = config.data;
 
@@ -33,7 +33,7 @@ function budgetGraph(config) {
         return x(parseDate(d.year))
       })
       .y(function(d) {
-        return y(+d.budget)
+        return y(+d.value)
       })
       .interpolate('cardinal');
 
@@ -56,28 +56,17 @@ function budgetGraph(config) {
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("Price ($)");
+        .text("Percentage");
 
     function my() {
 
-      var lines = svg.selectAll('.budget-line')
+      var lines = svg.selectAll('.indicator-line')
         .data(data)
 
       lines.enter().append('path')
 
       lines
-        .attr('class', function(d) {
-          var clazz = 'budget-line';
-          if (window.manager.get('countryISO') === d.countryISO)
-            clazz += ' selected';
-          return clazz;
-        })
-        .on('click', function(d) {
-          var budgetLine = d3.select(this);
-          d3.select('.budget-graph .selected').classed('selected', false);
-          budgetLine.classed('selected', true);
-          window.manager.set('countryISO', d.countryISO);
-        })
+        .attr('class', function(d) { return 'indicator-line ' + d[0].type })
 
       lines
         .transition()
@@ -85,9 +74,6 @@ function budgetGraph(config) {
           .attr('d', lineFn);
 
       lines.exit().remove();
-
-
-
     }
 
     my.data = function(_data) {
@@ -97,4 +83,5 @@ function budgetGraph(config) {
     }
 
     return my;
+
 }
