@@ -32,9 +32,10 @@ Education.Routers.MainRouter = Backbone.Router.extend({
         this.countries = world.features;
         this.countryData = countryData.countries;
 
-        /*svg.selectAll(".country")
-          .data(this.countries)
-          .call(map())*/
+
+        this.world = new Education.Views.WorldView({
+          collection: new Education.Collections.World(this.countries)
+        });
 
         this.rightpanel = new Education.Views.PanelRightView({
           model: new Education.Models.Panel(this.countryData[0]),
