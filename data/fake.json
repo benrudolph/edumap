@@ -3,167 +3,339 @@
         {
             "name": "zambia",
             "iso": "ZMB",
-            "indicators": [
+            "actions": [
                 {
-                    "name": "primary",
-                    "budgetseries": [
+                    "name": "Higher Education",
+                    "indicators": [
                         {
-                            "year": "2012",
-                            "budget": "24409980"
+                            "name": "primary",
+                            "budgetseries": [
+                                {
+                                    "year": "2012",
+                                    "budget": "24409980"
+                                },
+                                {
+                                    "year": "2013",
+                                    "budget": "22409980"
+                                },
+                                {
+                                    "year": "2014",
+                                    "budget": "21409980"
+                                },
+                                {
+                                    "year": "2015",
+                                    "budget": "14409980"
+                                },
+                                {
+                                    "year": "2016",
+                                    "budget": "25409980"
+                                }
+                            ],
+                            "indicatorseries": [
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".3",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".5",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".25",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".3",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".6",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".8",
+                                        "type": "target"
+                                    }
+                                ]
+                            ]
                         },
                         {
-                            "year": "2013",
-                            "budget": "22409980"
-                        },
-                        {
-                            "year": "2014",
-                            "budget": "21409980"
-                        },
-                        {
-                            "year": "2015",
-                            "budget": "14409980"
-                        },
-                        {
-                            "year": "2016",
-                            "budget": "25409980"
+                            "name": "secondary",
+                            "budgetseries": [
+                                {
+                                    "year": "2012",
+                                    "budget": "4409980"
+                                },
+                                {
+                                    "year": "2013",
+                                    "budget": "2409980"
+                                },
+                                {
+                                    "year": "2014",
+                                    "budget": "21409980"
+                                },
+                                {
+                                    "year": "2015",
+                                    "budget": "4409980"
+                                },
+                                {
+                                    "year": "2016",
+                                    "budget": "5409980"
+                                }
+                            ],
+                            "indicatorseries": [
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".5",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".25",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".3",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".6",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".8",
+                                        "type": "target"
+                                    }
+                                ]
+                            ]
                         }
-                    ],
-                    "indicatorseries": [
-                        [
-                            {
-                                "year": "2012",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2013",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2014",
-                                "value": ".3",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2015",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2016",
-                                "value": ".75",
-                                "type": "actual"
-                            }
-                        ],
-                        [
-                            {
-                                "year": "2012",
-                                "value": ".5",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2013",
-                                "value": ".25",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2014",
-                                "value": ".3",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2015",
-                                "value": ".6",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2016",
-                                "value": ".8",
-                                "type": "target"
-                            }
-                        ]
                     ]
                 },
                 {
-                    "name": "secondary",
-                    "budgetseries": [
+                    "name": "Life Long",
+                    "indicators": [
                         {
-                            "year": "2012",
-                            "budget": "4409980"
+                            "name": "cashmoney",
+                            "budgetseries": [
+                                {
+                                    "year": "2012",
+                                    "budget": "24409980"
+                                },
+                                {
+                                    "year": "2013",
+                                    "budget": "22409980"
+                                },
+                                {
+                                    "year": "2014",
+                                    "budget": "21409980"
+                                },
+                                {
+                                    "year": "2015",
+                                    "budget": "14409980"
+                                },
+                                {
+                                    "year": "2016",
+                                    "budget": "25409980"
+                                }
+                            ],
+                            "indicatorseries": [
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".3",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".5",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".25",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".3",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".6",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".8",
+                                        "type": "target"
+                                    }
+                                ]
+                            ]
                         },
                         {
-                            "year": "2013",
-                            "budget": "2409980"
-                        },
-                        {
-                            "year": "2014",
-                            "budget": "21409980"
-                        },
-                        {
-                            "year": "2015",
-                            "budget": "4409980"
-                        },
-                        {
-                            "year": "2016",
-                            "budget": "5409980"
+                            "name": "innovation",
+                            "budgetseries": [
+                                {
+                                    "year": "2012",
+                                    "budget": "4409980"
+                                },
+                                {
+                                    "year": "2013",
+                                    "budget": "2409980"
+                                },
+                                {
+                                    "year": "2014",
+                                    "budget": "21409980"
+                                },
+                                {
+                                    "year": "2015",
+                                    "budget": "4409980"
+                                },
+                                {
+                                    "year": "2016",
+                                    "budget": "5409980"
+                                }
+                            ],
+                            "indicatorseries": [
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".5",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".25",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".3",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".6",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".8",
+                                        "type": "target"
+                                    }
+                                ]
+                            ]
                         }
-                    ],
-                    "indicatorseries": [
-                        [
-                            {
-                                "year": "2012",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2013",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2014",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2015",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2016",
-                                "value": ".75",
-                                "type": "actual"
-                            }
-                        ],
-                        [
-                            {
-                                "year": "2012",
-                                "value": ".5",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2013",
-                                "value": ".25",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2014",
-                                "value": ".3",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2015",
-                                "value": ".6",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2016",
-                                "value": ".8",
-                                "type": "target"
-                            }
-                        ]
                     ]
                 }
             ]
@@ -171,177 +343,349 @@
         {
             "name": "uganda",
             "iso": "UGA",
-            "indicators": [
+            "actions": [
                 {
-                    "name": "primary",
-                    "budgetseries": [
+                    "name": "Higher Education",
+                    "indicators": [
                         {
-                            "year": "2012",
-                            "budget": "11409980",
-                            "target": ".33",
-                            "actual": ".5"
+                            "name": "primary",
+                            "budgetseries": [
+                                {
+                                    "year": "2012",
+                                    "budget": "11409980",
+                                    "target": ".33",
+                                    "actual": ".5"
+                                },
+                                {
+                                    "year": "2013",
+                                    "budget": "12409980",
+                                    "target": ".33",
+                                    "actual": ".5"
+                                },
+                                {
+                                    "year": "2014",
+                                    "budget": "14409980",
+                                    "target": ".33",
+                                    "actual": ".5"
+                                },
+                                {
+                                    "year": "2015",
+                                    "budget": "13409980",
+                                    "target": ".33",
+                                    "actual": ".5"
+                                },
+                                {
+                                    "year": "2016",
+                                    "budget": "15409980",
+                                    "target": ".33",
+                                    "actual": ".5"
+                                }
+                            ],
+                            "indicatorseries": [
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".5",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".25",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".3",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".6",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".8",
+                                        "type": "target"
+                                    }
+                                ]
+                            ]
                         },
                         {
-                            "year": "2013",
-                            "budget": "12409980",
-                            "target": ".33",
-                            "actual": ".5"
-                        },
-                        {
-                            "year": "2014",
-                            "budget": "14409980",
-                            "target": ".33",
-                            "actual": ".5"
-                        },
-                        {
-                            "year": "2015",
-                            "budget": "13409980",
-                            "target": ".33",
-                            "actual": ".5"
-                        },
-                        {
-                            "year": "2016",
-                            "budget": "15409980",
-                            "target": ".33",
-                            "actual": ".5"
+                            "name": "secondary",
+                            "budgetseries": [
+                                {
+                                    "year": "2012",
+                                    "budget": "21409980"
+                                },
+                                {
+                                    "year": "2013",
+                                    "budget": "22409980"
+                                },
+                                {
+                                    "year": "2014",
+                                    "budget": "24409980"
+                                },
+                                {
+                                    "year": "2015",
+                                    "budget": "23409980"
+                                },
+                                {
+                                    "year": "2016",
+                                    "budget": "25409980"
+                                }
+                            ],
+                            "indicatorseries": [
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".5",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".25",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".3",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".6",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".8",
+                                        "type": "target"
+                                    }
+                                ]
+                            ]
                         }
-                    ],
-                    "indicatorseries": [
-                        [
-                            {
-                                "year": "2012",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2013",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2014",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2015",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2016",
-                                "value": ".75",
-                                "type": "actual"
-                            }
-                        ],
-                        [
-                            {
-                                "year": "2012",
-                                "value": ".5",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2013",
-                                "value": ".25",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2014",
-                                "value": ".3",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2015",
-                                "value": ".6",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2016",
-                                "value": ".8",
-                                "type": "target"
-                            }
-                        ]
                     ]
                 },
                 {
-                    "name": "secondary",
-                    "budgetseries": [
+                    "name": "Life Long",
+                    "indicators": [
                         {
-                            "year": "2012",
-                            "budget": "21409980"
+                            "name": "cashmoney",
+                            "budgetseries": [
+                                {
+                                    "year": "2012",
+                                    "budget": "24409980"
+                                },
+                                {
+                                    "year": "2013",
+                                    "budget": "22409980"
+                                },
+                                {
+                                    "year": "2014",
+                                    "budget": "21409980"
+                                },
+                                {
+                                    "year": "2015",
+                                    "budget": "14409980"
+                                },
+                                {
+                                    "year": "2016",
+                                    "budget": "25409980"
+                                }
+                            ],
+                            "indicatorseries": [
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".3",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".5",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".25",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".3",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".6",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".8",
+                                        "type": "target"
+                                    }
+                                ]
+                            ]
                         },
                         {
-                            "year": "2013",
-                            "budget": "22409980"
-                        },
-                        {
-                            "year": "2014",
-                            "budget": "24409980"
-                        },
-                        {
-                            "year": "2015",
-                            "budget": "23409980"
-                        },
-                        {
-                            "year": "2016",
-                            "budget": "25409980"
+                            "name": "innovation",
+                            "budgetseries": [
+                                {
+                                    "year": "2012",
+                                    "budget": "4409980"
+                                },
+                                {
+                                    "year": "2013",
+                                    "budget": "2409980"
+                                },
+                                {
+                                    "year": "2014",
+                                    "budget": "21409980"
+                                },
+                                {
+                                    "year": "2015",
+                                    "budget": "4409980"
+                                },
+                                {
+                                    "year": "2016",
+                                    "budget": "5409980"
+                                }
+                            ],
+                            "indicatorseries": [
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".75",
+                                        "type": "actual"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "year": "2012",
+                                        "value": ".5",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2013",
+                                        "value": ".25",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2014",
+                                        "value": ".3",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2015",
+                                        "value": ".6",
+                                        "type": "target"
+                                    },
+                                    {
+                                        "year": "2016",
+                                        "value": ".8",
+                                        "type": "target"
+                                    }
+                                ]
+                            ]
                         }
-                    ],
-                    "indicatorseries": [
-                        [
-                            {
-                                "year": "2012",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2013",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2014",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2015",
-                                "value": ".75",
-                                "type": "actual"
-                            },
-                            {
-                                "year": "2016",
-                                "value": ".75",
-                                "type": "actual"
-                            }
-                        ],
-                        [
-                            {
-                                "year": "2012",
-                                "value": ".5",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2013",
-                                "value": ".25",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2014",
-                                "value": ".3",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2015",
-                                "value": ".6",
-                                "type": "target"
-                            },
-                            {
-                                "year": "2016",
-                                "value": ".8",
-                                "type": "target"
-                            }
-                        ]
                     ]
                 }
             ]
