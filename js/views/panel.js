@@ -35,7 +35,7 @@ Education.Views.PanelLeftView = Backbone.View.extend({
   },
 
   extractSeries: function(model, type) {
-    var series = _.find(model.get('indicators'), function(indicator) {
+    var series = _.find(this.getAction(model.toJSON()).indicators, function(indicator) {
       return indicator.name === window.manager.get('indicator');
     })[type];
 
@@ -45,8 +45,23 @@ Education.Views.PanelLeftView = Backbone.View.extend({
     return series;
   },
 
+  getAction: function(country) {
+    return _.find(country.actions, function(action) {
+      return action.name === window.manager.get('action')
+    })
+  },
+
   render: function() {
-    this.$el.html(this.template());
+    var indicators = this.getAction(this.collection.findWhere({
+        'iso': window.manager.get('countryISO')
+      }).toJSON()).indicators;
+
+    console.log(indicators);
+
+    this.$el.html(this.template({
+      indicators: indicators
+    }));
+
 
 
     this.initBudgetGraph();
