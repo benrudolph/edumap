@@ -16,6 +16,9 @@ Education.Routers.MainRouter = Backbone.Router.extend({
     window.manager.on('change:countryISO', function() {
       console.log('change:countryISO');
       this.leftpanel.renderIndicatorGraph();
+      this.leftpanel.renderBudgetGraph();
+      this.rightpanel.render();
+      this.world.renderWorld();
     }.bind(this));
 
     // Change the indicator value
@@ -38,12 +41,11 @@ Education.Routers.MainRouter = Backbone.Router.extend({
         });
 
         this.rightpanel = new Education.Views.PanelRightView({
-          model: new Education.Models.Panel(this.countryData[0]),
+          collection: new Education.Collections.Panel(this.countryData),
           el: '#rightpanel'
         });
 
         this.leftpanel = new Education.Views.PanelLeftView({
-          model: new Education.Models.Panel(this.countryData[0]),
           collection: new Education.Collections.Panel(this.countryData),
           el: '#leftpanel'
         });
@@ -71,4 +73,6 @@ $(document).ready(function() {
 
 })
 
-
+String.prototype.toTitleCase = function () {
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};

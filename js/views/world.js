@@ -18,6 +18,10 @@ Education.Views.WorldView = Backbone.View.extend({
 
   },
 
+  renderWorld: function() {
+    this.worldMap();
+  },
+
   render: function() {
     this.worldMap = map(this.mapConfig);
     this.worldMap.data(this.collection.toJSON());

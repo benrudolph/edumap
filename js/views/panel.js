@@ -35,7 +35,9 @@ Education.Views.PanelLeftView = Backbone.View.extend({
   },
 
   extractSeries: function(model, type) {
-    var series = model.get('indicators')[window.manager.get('indicator')][type]
+    var series = _.find(model.get('indicators'), function(indicator) {
+      return indicator.name === window.manager.get('indicator');
+    })[type];
 
 
     //Add country iso to data
@@ -44,7 +46,7 @@ Education.Views.PanelLeftView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(this.template(this.model.toJSON()));
+    this.$el.html(this.template());
 
 
     this.initBudgetGraph();
@@ -96,7 +98,9 @@ Education.Views.PanelRightView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(this.template(this.model.toJSON()));
+    this.$el.html(this.template(this.collection.findWhere({
+      iso: window.manager.get('countryISO')
+    }).toJSON()));
     return this;
   }
 })

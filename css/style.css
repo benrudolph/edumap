@@ -77,6 +77,10 @@
   cursor: pointer;
 }
 
+.budget-line:hover {
+  stroke-width: 2px;
+}
+
 .indicator-line.actual {
   stroke: black;
 }
@@ -99,4 +103,18 @@
 }
 .axis text {
   font-size: 10px;
+}
+
+.country.selected {
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.country {
+  cursor: pointer;
+  fill: #d5ebc2;
+}
+
+.country:hover {
+  fill: #fff9a4;
 }

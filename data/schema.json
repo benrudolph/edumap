@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "properties": {
+    "countries": {
+      "type":"array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "iso": { "type": "string" },
+          "indicators": {
+            "type":"array",
+            "items": {
+              "type":"object",
+              "properties": {
+                "name": { "type": "string" },
+                "budgetseries": {
+                  "type":"array",
+                  "items": {
+                    "type":"object",
+                    "properties":{
+                      "year": { "type": "string" },
+                      "budget": { "type": "string" }
+                    }
+                  }
+                },
+                "indicatorseries": {
+                  "type":"array",
+                  "items": {
+                    "type":"object",
+                    "properties": {
+                      "year": { "type": "string" },
+                      "value": { "type": "string" },
+                      "type": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

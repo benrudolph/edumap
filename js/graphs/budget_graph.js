@@ -73,9 +73,6 @@ function budgetGraph(config) {
           return clazz;
         })
         .on('click', function(d) {
-          var budgetLine = d3.select(this);
-          d3.select('.budget-graph .selected').classed('selected', false);
-          budgetLine.classed('selected', true);
           window.manager.set('countryISO', d.countryISO);
         })
 

@@ -42,11 +42,13 @@ function map(config) {
     world.enter().append("path")
 
     world
-      .attr("class", "country")
+      .attr("class", function(d) {
+        return 'country' + (window.manager.get('countryISO') === d.id ? ' selected' : '');
+      })
       .attr("d", path)
-      .style("fill", function(d, i) {
-        return color(Math.floor(Math.random() * 5));
-      });
+      .on('click', function(d) {
+        window.manager.set('countryISO', d.id);
+      })
   };
 
   function mousedown() {
