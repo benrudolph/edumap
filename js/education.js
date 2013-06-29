@@ -70,7 +70,6 @@ $(document).ready(function() {
   window.router = new Education.Routers.MainRouter();
   Backbone.history.start();
 
-
 })
 
 String.prototype.toTitleCase = function () {

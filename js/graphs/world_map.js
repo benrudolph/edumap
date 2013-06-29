@@ -27,8 +27,6 @@ function map(config) {
       .on("mouseup", mouseup)
       .on("mouseleave", mouseleave)
 
-  var color = d3.scale.category10();
-
   var m0;
 
   var world;

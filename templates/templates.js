@@ -20,7 +20,6 @@ window.JST['panel/rightpanel'] = _.template([
       '</div>',
     '</div>',
     '<div class="infographic myrow mycontainer">Infographic</div>',
-    '<div class="chart myrow mycontainer">Chart</div>',
     '<div class="articles myrow mycontainer">Articles</div>',
   '</div>'
 ].join(''));
