@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130709092752) do
+ActiveRecord::Schema.define(version: 20130709101400) do
+
+  create_table "actions", force: true do |t|
+    t.string "name"
+  end
 
   create_table "impact_indicators", force: true do |t|
     t.string "objective"
