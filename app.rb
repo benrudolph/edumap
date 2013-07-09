@@ -1,8 +1,10 @@
 require 'rubygems'
 require 'sinatra'
-require 'mongo'
-require 'bson_ext'
+require 'sinatra/activerecord'
+require 'rake'
+require 'yaml'
 
+set :database, "sqlite3:///edumap.sqlite3"
 set :haml, :format => :html5
 
 get '/' do
