@@ -51,9 +51,13 @@ Education.Views.PanelLeftView = Backbone.View.extend({
     })
   },
 
+  getIndicators: function() {
+
+  },
+
   render: function() {
     var indicators = this.getAction(this.collection.findWhere({
-        'iso': window.manager.get('countryISO')
+        'country': window.manager.get('country')
       }).toJSON()).indicators;
 
     console.log(indicators);
