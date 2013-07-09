@@ -10,23 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130709101400) do
+ActiveRecord::Schema.define(version: 20130709103305) do
 
   create_table "actions", force: true do |t|
     t.string "name"
   end
 
   create_table "impact_indicators", force: true do |t|
-    t.string "objective"
-    t.string "olbudget"
-    t.string "aolbudget"
-    t.string "indicator"
-    t.string "baseline"
-    t.string "standard"
-    t.string "oltarget"
-    t.string "optarget"
-    t.string "myr"
-    t.string "yer"
+    t.string  "objective"
+    t.string  "olbudget"
+    t.string  "aolbudget"
+    t.string  "indicator"
+    t.string  "baseline"
+    t.string  "standard"
+    t.string  "oltarget"
+    t.string  "optarget"
+    t.string  "myr"
+    t.string  "yer"
+    t.integer "ppg_id"
   end
 
   create_table "operations", force: true do |t|
@@ -35,18 +36,20 @@ ActiveRecord::Schema.define(version: 20130709101400) do
   end
 
   create_table "perf_indicators", force: true do |t|
-    t.string "output"
-    t.string "olbudget"
-    t.string "aolbudget"
-    t.string "indicator"
-    t.string "oltarget"
-    t.string "optarget"
-    t.string "myr"
-    t.string "yer"
+    t.string  "output"
+    t.string  "olbudget"
+    t.string  "aolbudget"
+    t.string  "indicator"
+    t.string  "oltarget"
+    t.string  "optarget"
+    t.string  "myr"
+    t.string  "yer"
+    t.integer "ppg_id"
   end
 
   create_table "ppgs", force: true do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "operation_id"
   end
 
 end
