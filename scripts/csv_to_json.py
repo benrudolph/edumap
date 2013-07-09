@@ -8,19 +8,32 @@ import collections
 
 class Parser:
 
-  HEADERS = ['COUNTRY',
-  'PPG',
-  'GOAL',
-  'GROUP',
-  'OBJECTIVE',
-  'YEAR',
-  'IND',
-  'IND_BASELINE',
-  'IND_ACTUAL',
-  'IND_TARGET',
-  'IND_MIDYEAR',
-  'IND_YEAREND',
-  'IND_STANDARD']
+  # first value is name of field, second is if it's nested
+  HEADERS = [
+    ('country', True),
+    ('ppg', True),
+    ('objective', True),
+    ('year', True),
+    ('olbudget_impact', False),
+    ('aolbudget_impact', False),
+    ('compbudget_impact', False),
+    ('indicator_impact', False),
+    ('baseline', False),
+    ('oltarget', False),
+    ('optarget', False),
+    ('myr', False),
+    ('yer', False),
+    ('standard', False),
+    ('output', False),
+    ('olbudget_perf', False),
+    ('aolbudget_perf', False),
+    ('compbudget_perf', False),
+    ('indicator_perf', False),
+    ('oltarget_perf', False),
+    ('optarget_perf', False),
+    ('myr_perf', False),
+    ('yer_perf', False)
+  ]
 
   def __init__(self, data):
     self.headers = data[0].split(',')
@@ -39,22 +52,28 @@ class Parser:
 
 
   def recurse(self, container, line, i):
-    if i == 7:
+    if i >= len(self.HEADERS):
       return
 
     # Find corresponding country if it exists
-    if self.HEADERS[i] + 'S' not in container:
-      container[self.HEADERS[i] + 'S'] = []
+    if self.HEADERS[i][0] + 's' not in container and self.HEADERS[i][1]:
+      container[self.HEADERS[i][0] + 's'] = []
+    elif not self.HEADERS[i][1]:
+      container[self.HEADERS[i][0]] = line[i].strip().strip('"')
+      self.recurse(container, line, i+1)
+      return
 
     datum = None
-    for d in container[self.HEADERS[i] + 'S']:
-      if d[self.HEADERS[i]] == line[i]:
+    for d in container[self.HEADERS[i][0] + 's']:
+      if d[self.HEADERS[i][0]] == line[i]:
         datum = d
 
     if not datum:
       datum = {}
-      datum[self.HEADERS[i]] = line[i]
-      container[self.HEADERS[i] + 'S'].append(datum)
+      print line
+      print i
+      datum[self.HEADERS[i][0]] = line[i].strip().strip('"')
+      container[self.HEADERS[i][0] + 's'].append(datum)
 
     self.recurse(datum, line, i+1)
 

@@ -13,8 +13,8 @@ Education.Routers.MainRouter = Backbone.Router.extend({
     window.manager = new Education.Models.Manager();
 
     // Change country selected
-    window.manager.on('change:countryISO', function() {
-      console.log('change:countryISO');
+    window.manager.on('change:country', function() {
+      console.log('change:country');
       this.leftpanel.renderIndicatorGraph();
       this.leftpanel.renderBudgetGraph();
       this.rightpanel.render();
@@ -30,7 +30,7 @@ Education.Routers.MainRouter = Backbone.Router.extend({
 
     queue()
       .defer(d3.json, 'data/world.json')
-      .defer(d3.json, 'data/fake.json')
+      .defer(d3.json, 'data/real.json')
       .await(function(error, world, countryData) {
         this.countries = world.features;
         this.countryData = countryData.countries;

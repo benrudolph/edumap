@@ -1,6 +1,6 @@
 Education.Models.Manager = Backbone.Model.extend({
   defaults: {
-    'indicator': 'primary',
+    'indicator': '% of primary school-aged children enrolled in primary education',
     'countryISO': 'ZMB',
     'action': 'Higher Education'
   }
