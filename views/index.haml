@@ -1,0 +1,60 @@
+!!! 5
+%head
+  %meta{ :charset => "utf-8" }
+  %link{ :rel => "stylesheet", :href => "css/foundation.css" }
+
+  %link{ :rel => "stylesheet", :type => "text/css", :href => "css/style.css" }
+  %link{ :rel => "stylesheet", :type => "text/css", :href => "flags/flags32.css" }
+
+  %script{ :src => "js/vendor/custom.modernizr.js" }
+
+%body
+  %nav#header.top-bar
+    %ul.title-area
+      %li.name
+        %h1 UNHCR Protection Strategy Mapping
+
+    %div.share
+
+    %section.top-bar-section
+      %ul.left
+        %li.divider
+        %li.has-dropdown
+          %a{ :href => "#" } Strategies
+          %ul.dropdown
+            %li
+              %a{ :href=>"#" } Higher Education
+            %li>
+              %a{ :href=>"#" } Life Long
+        %li.divider
+        %li.strategy
+          %a#strategy Higher Education
+
+  %div#content.row
+    %div#leftpanel.panel.large-3.columns
+    %div#map.large-6.columns
+    %div#rightpanel.panel.large-3.columns
+
+  %div#timeline
+    %div.row.full-width
+      %div.large-12.columns
+        %p Timeline
+
+  %script{ :src => "js/vendor/zepto.js" }
+  %script{ :src => "js/vendor/queue.v1.min.js" }
+  %script{ :src => "js/foundation.min.js" }
+
+  %script{ :src => "js/vendor/d3.v3.js" }
+  %script{ :src => "js/vendor/d3.geo.projection.v0.min.js" }
+  %script{ :src => "js/vendor/topojson.v1.min.js" }
+  %script{ :src => "js/vendor/underscore.js" }
+  %script{ :src => "js/vendor/backbone.js" }
+  %script{ :src => "templates/templates.js" }
+  %script{ :src => "js/graphs/budget_graph.js" }
+  %script{ :src => "js/graphs/indicator_graph.js" }
+  %script{ :src => "js/graphs/world_map.js" }
+  %script{ :src => "js/education.js" }
+  %script{ :src => "js/views/panel.js" }
+  %script{ :src => "js/views/world.js" }
+  %script{ :src => "js/manager.js" }
+
