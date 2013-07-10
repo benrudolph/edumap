@@ -24,16 +24,27 @@ window.JST['panel/rightpanel'] = _.template([
   '</div>'
 ].join(''));
 
+window.JST['panel/indicators'] = _.template([
+  '<label for="indicator" class="left">Indicator</label>',
+  '<select id="indicator">',
+    '<% for (var i = 0; i < indicators.length; i++) { %>',
+    '<option><%= indicators[i] %></option>',
+    '<% } %>',
+  '</select>',
+].join(''));
+
 window.JST['panel/leftpanel'] = _.template([
   '<div class="inner-panel">',
     '<div class="indicator-container myrow mycontainer">',
-      '<form class="custom">',
-        '<label for="indicator" class="left">Indicator</label>',
-        '<select id="indicator">',
-          '<% for (var i = 0; i < indicators.length; i++) { %>',
-          '<option><%= indicators[i] %></option>',
-          '<% } %>',
-        '</select>',
+      '<div class="indicator-type switch">',
+        '<input data-type="perf_indicators" id="perf-indicators" name="switch-x" type="radio" <% if (window.manager.get("indicatorType") === "perf_indicators") { %> checked<% } %>>',
+        '<label for="perf-indicator" >Performance</label>',
+        '<input data-type="impact_indicators" id="impact-indicators" name="switch-x" type="radio" <% if (window.manager.get("indicatorType") === "impact_indicators") { %> checked<% } %>>',
+        '<label for="impact-indicator" >Impact</label>',
+        '<span></span>',
+      '</div>',
+      '<form class="indicators custom">',
+        '<%= window.JST["panel/indicators"]({ indicators: indicators }) %>',
       '</form>',
     '</div>',
     '<div class="budget-graph myrow mycontainer"></div>',

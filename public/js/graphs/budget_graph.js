@@ -12,7 +12,6 @@ function budgetGraph(config) {
 
     var y = d3.scale.linear()
         .range([height, 0])
-        .domain([0, 5000000]);
 
     var data = config.data;
 
@@ -25,23 +24,23 @@ function budgetGraph(config) {
       .ticks(d3.time.years, 1);
 
     var yAxis = d3.svg.axis()
-      .scale(y)
       .orient("left");
+
+    var getTotalBudget = function(d) {
+      var ppg = _.findWhere(d.ppgs, { name: window.manager.get('ppg') })
+      var indicator = _.findWhere(ppg[window.manager.get('indicatorType')],
+          { indicator: window.manager.get('indicator') })
+      if (!indicator) { console.log('no indicator');return y(0); }
+      var totalBudget = +indicator.olbudget.replace(/,/g,'') + (+indicator.aolbudget.replace(/,/g,''));
+      return totalBudget;
+    }
 
     var lineFn = d3.svg.line()
       .x(function(d) {
         return x(parseDate(d.year))
       })
       .y(function(d) {
-        var ppg = _.findWhere(d.ppgs, { name: window.manager.get('ppg') })
-        var indicator = _.findWhere(ppg[window.manager.get('indicatorType')],
-            { indicator: window.manager.get('indicator') })
-        if (!indicator) return y(0);
-        var totalBudget = +indicator.olbudget.replace(/,/g,'') + (+indicator.aolbudget.replace(/,/g,''));
-        //console.log('ol: ' + indicator.olbudget)
-        //console.log('aol: ' + indicator.aolbudget)
-        //console.log('total: ' + totalBudget)
-        return y(totalBudget)
+        return y(getTotalBudget(d))
       })
       .interpolate('cardinal');
 
@@ -56,17 +55,30 @@ function budgetGraph(config) {
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis);
 
-    svg.append("g")
-        .attr("class", "y axis")
-        .call(yAxis)
-      .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("Price ($)");
 
     function my() {
+
+      y.domain([0, d3.max(data, function(d) {
+        // d is array of data points
+        // p is each country datum
+        var maxBudget = d3.max(d, function(p) { if (!p) console.log(d); return getTotalBudget(p) });
+        console.log(maxBudget)
+        return maxBudget;
+      })])
+
+      yAxis.scale(y)
+      // Redraw y Axis with new scale
+
+      svg.select('g.y.axis').remove()
+      svg.append("g")
+          .attr("class", "y axis")
+          .call(yAxis)
+        .append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 6)
+          .attr("dy", ".71em")
+          .style("text-anchor", "end")
+          .text("Price ($)");
 
       var lines = svg.selectAll('.budget-line')
         .data(data)
@@ -76,12 +88,12 @@ function budgetGraph(config) {
       lines
         .attr('class', function(d) {
           var clazz = 'budget-line';
-          if (window.manager.get('iso') === d.iso)
+          if (window.manager.get('iso') === d[0].iso)
             clazz += ' selected';
           return clazz;
         })
         .on('click', function(d) {
-          window.manager.set('iso', d.iso);
+          window.manager.set('iso', d[0].iso);
         })
 
       lines

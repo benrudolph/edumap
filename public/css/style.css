@@ -86,11 +86,11 @@
   stroke-width: 2px;
 }
 
-.indicator-line.actual {
+.indicator-line.oltarget {
   stroke: black;
 }
 
-.indicator-line.target {
+.indicator-line.optarget {
   stroke: blue;
 }
 

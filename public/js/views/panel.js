@@ -9,7 +9,8 @@ Education.Views.PanelLeftView = Backbone.View.extend({
   template: window.JST['panel/leftpanel'],
 
   events: {
-    'change #indicator': 'onIndicatorChange'
+    'change #indicator': 'onIndicatorChange',
+    'change .indicator-type input': 'onIndicatorTypeChange'
   },
 
   initialize: function(options) {
@@ -31,6 +32,13 @@ Education.Views.PanelLeftView = Backbone.View.extend({
     this.render();
   },
 
+  onIndicatorTypeChange: function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    window.manager.set('indicatorType', $(e.target).attr('data-type'));
+  },
+
   onIndicatorChange: function(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -39,7 +47,7 @@ Education.Views.PanelLeftView = Backbone.View.extend({
 
 
   render: function() {
-    var indicators = this.impactIndicators
+    var indicators = window.manager.get('indicatorType') === 'impact_indicators' ? this.impactIndicators : this.perfIndicators
     console.log(indicators);
 
     this.$el.html(this.template({
@@ -58,6 +66,11 @@ Education.Views.PanelLeftView = Backbone.View.extend({
     return this;
   },
 
+  // Just rerenders the indicator select
+  renderIndicators: function(indicators) {
+    this.$el.find('form.indicators').html(window.JST['panel/indicators']({ indicators: indicators }));
+  },
+
   initBudgetGraph: function() {
     this.budgetConfig.selection = d3.select(this.el).select('.budget-graph')
     this.budgetGraph = budgetGraph(this.budgetConfig);
@@ -68,14 +81,18 @@ Education.Views.PanelLeftView = Backbone.View.extend({
     var countries = this.collection.map(function(d) { return d.get('iso') });
     var countryData = [];
     countries.forEach(function(d) {
-      countryData.push(this.collection.where({ iso: d })
+      var c = this.collection.where({ iso: d })
                            .filter(function(d) {
                              var ppgs = d.get('ppgs');
                              return _.find(ppgs, function(d) {
                                return d.name === window.manager.get('ppg')
                              });
                            })
-                           .map(function(d) { return d.toJSON() }));
+                           .map(function(d) { return d.toJSON() });
+
+      if (c.length > 0) {
+        countryData.push(c)
+      }
     }.bind(this))
     console.log(countryData)
 
@@ -90,10 +107,18 @@ Education.Views.PanelLeftView = Backbone.View.extend({
   },
 
   renderIndicatorGraph: function() {
-    var countryData = this.collection.filter(function (d) {
+    var c = this.collection.filter(function (d) {
       return d.get('iso') === window.manager.get('iso')
     }).map(function(d) { return d.toJSON() })
-    // Extracts indicator series that matches selected country
+
+    var types = ['oltarget', 'optarget']
+
+    var countryData = types.map(function(d) {
+      var datum = c.clone();
+      datum.forEach(function(p) { p.type = d; });
+      return datum;
+    })
+
     this.indicatorGraph.data(countryData);
 
     this.indicatorGraph();

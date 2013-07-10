@@ -12,6 +12,15 @@ Education.Routers.MainRouter = Backbone.Router.extend({
   initialize: function() {
     window.manager = new Education.Models.Manager();
 
+    // Change indicator Type
+    window.manager.on('change:indicatorType', function() {
+      // Change to first indicator in list
+      var indicators = window.manager.get('indicatorType') === 'impact_indicators' ? this.impactIndicators : this.perfIndicators
+      window.manager.set('indicator', indicators[0]);
+      this.leftpanel.renderIndicators(indicators);
+
+    }.bind(this))
+
     // Change country selected
     window.manager.on('change:iso', function() {
       console.log('change:iso');
@@ -78,4 +87,8 @@ $(document).ready(function() {
 
 String.prototype.toTitleCase = function () {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
+
+Array.prototype.clone = function() {
+	return this.slice(0);
 };

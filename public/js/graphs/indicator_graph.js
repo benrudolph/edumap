@@ -28,16 +28,23 @@ function indicatorGraph(config) {
       .scale(y)
       .orient("left");
 
+    var getIndicator = function(d) {
+      var ppg = _.findWhere(d.ppgs, { name: window.manager.get('ppg') })
+      var indicator = _.findWhere(ppg[window.manager.get('indicatorType')],
+          { indicator: window.manager.get('indicator') })
+      return indicator
+    }
+
     var lineFn = d3.svg.line()
       .x(function(d) {
         return x(parseDate(d.year))
       })
       .y(function(d) {
-        var ppg = _.findWhere(d.ppgs, { name: window.manager.get('ppg') })
-        var indicator = _.findWhere(ppg[window.manager.get('indicatorType')],
-            { indicator: window.manager.get('indicator') })
+        var indicator = getIndicator(d);
         if (!indicator) return 0;
-        return y(+indicator.standard)
+        console.log(d)
+        console.log(indicator)
+        return y(+indicator[d.type])
       })
       .interpolate('cardinal');
 
@@ -65,12 +72,12 @@ function indicatorGraph(config) {
     function my() {
 
       var lines = svg.selectAll('.indicator-line')
-        .data([data])
+        .data(data)
 
       lines.enter().append('path')
 
       lines
-        .attr('class', function(d) { return 'indicator-line ' /*+ d[0].type */})
+        .attr('class', function(d) { return 'indicator-line ' + d[0].type })
 
       lines
         .transition()
