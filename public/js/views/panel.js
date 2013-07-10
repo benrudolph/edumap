@@ -101,17 +101,26 @@ Education.Views.PanelLeftView = Backbone.View.extend({
   },
 
   renderIndicatorGraph: function() {
-    var c = this.collection.filter(function (d) {
-      return d.get('iso') === window.manager.get('iso')
-    }).map(function(d) { return d.toJSON() })
+    var country = this.collection.findWhere({
+      'iso': window.manager.get('iso')
+    })
+
+    country.set('data', country.get('data').filter(function(d) {
+      return d.indicator.name === window.manager.get('indicator') &&
+          d.ppg.name === window.manager.get('ppg')
+    }))
 
     var types = ['oltarget', 'optarget']
 
     var countryData = types.map(function(d) {
-      var datum = c.clone();
+      var datum = country.get('data').clone();
       datum.forEach(function(p) { p.type = d; });
       return datum;
+    }).filter(function(d) {
+      return d != []
     })
+
+
 
     this.indicatorGraph.data(countryData);
 

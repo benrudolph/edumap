@@ -28,23 +28,12 @@ function indicatorGraph(config) {
       .scale(y)
       .orient("left");
 
-    var getIndicator = function(d) {
-      var ppg = _.findWhere(d.ppgs, { name: window.manager.get('ppg') })
-      var indicator = _.findWhere(ppg[window.manager.get('indicatorType')],
-          { indicator: window.manager.get('indicator') })
-      return indicator
-    }
-
     var lineFn = d3.svg.line()
       .x(function(d) {
         return x(parseDate(d.year))
       })
       .y(function(d) {
-        var indicator = getIndicator(d);
-        if (!indicator) return 0;
-        console.log(d)
-        console.log(indicator)
-        return y(+indicator[d.type])
+        return y(d[d.type])
       })
       .interpolate('cardinal');
 
