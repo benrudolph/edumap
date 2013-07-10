@@ -1,5 +1,6 @@
 class PerfIndicator < ActiveRecord::Base
-  attr_accessible :output, :olbudget, :aolbudget, :indicator, :oltarget, :optarget, :myr, :yer
+  attr_accessible :output, :name
 
   belongs_to :action
+  has_many :data
 end

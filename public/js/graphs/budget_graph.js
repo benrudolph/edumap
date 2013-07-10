@@ -27,11 +27,7 @@ function budgetGraph(config) {
       .orient("left");
 
     var getTotalBudget = function(d) {
-      var ppg = _.findWhere(d.ppgs, { name: window.manager.get('ppg') })
-      var indicator = _.findWhere(ppg[window.manager.get('indicatorType')],
-          { indicator: window.manager.get('indicator') })
-      if (!indicator) { console.log('no indicator');return y(0); }
-      var totalBudget = +indicator.olbudget.replace(/,/g,'') + (+indicator.aolbudget.replace(/,/g,''));
+      var totalBudget = +d.olbudget.replace(/,/g,'') + (+d.aolbudget.replace(/,/g,''));
       return totalBudget;
     }
 
@@ -88,12 +84,12 @@ function budgetGraph(config) {
       lines
         .attr('class', function(d) {
           var clazz = 'budget-line';
-          if (window.manager.get('iso') === d[0].iso)
+          if (window.manager.get('iso') === d.iso)
             clazz += ' selected';
           return clazz;
         })
         .on('click', function(d) {
-          window.manager.set('iso', d[0].iso);
+          window.manager.set('iso', d.iso);
         })
 
       lines

@@ -48,7 +48,6 @@ Education.Views.PanelLeftView = Backbone.View.extend({
 
   render: function() {
     var indicators = window.manager.get('indicatorType') === 'impact_indicators' ? this.impactIndicators : this.perfIndicators
-    console.log(indicators);
 
     this.$el.html(this.template({
       indicators: indicators
@@ -78,21 +77,16 @@ Education.Views.PanelLeftView = Backbone.View.extend({
   },
 
   renderBudgetGraph: function() {
-    var countries = this.collection.map(function(d) { return d.get('iso') });
     var countryData = [];
-    countries.forEach(function(d) {
-      var c = this.collection.where({ iso: d })
-                           .filter(function(d) {
-                             var ppgs = d.get('ppgs');
-                             return _.find(ppgs, function(d) {
-                               return d.name === window.manager.get('ppg')
-                             });
-                           })
-                           .map(function(d) { return d.toJSON() });
-
-      if (c.length > 0) {
-        countryData.push(c)
-      }
+    countryData = this.collection.map(function(d) {
+      data = d.get('data')
+      data = _.filter(data, function(d) {
+        return d.indicator_type === window.manager.get('indicatorType') &&
+            d.ppg.name === window.manager.get('ppg') &&
+            d.indicator.name === window.manager.get('indicator')
+      })
+      data.iso = d.get('iso')
+      return data
     }.bind(this))
     console.log(countryData)
 

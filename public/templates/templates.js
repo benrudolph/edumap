@@ -28,7 +28,7 @@ window.JST['panel/indicators'] = _.template([
   '<label for="indicator" class="left">Indicator</label>',
   '<select id="indicator">',
     '<% for (var i = 0; i < indicators.length; i++) { %>',
-    '<option><%= indicators[i] %></option>',
+    '<option><%= indicators[i].name %></option>',
     '<% } %>',
   '</select>',
 ].join(''));

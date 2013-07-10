@@ -18,10 +18,10 @@ end
 
 get '/bootstrap' do
   content_type :json
-  # Terrible form to reparse operations... have to fix later
+  # Terrible form to reparse data... have to fix later
   {
-    :operations => JSON.parse(Operation.public_models),
-    :impact_indicators => ImpactIndicator.uniq.pluck(:indicator),
-    :perf_indicators => PerfIndicator.uniq.pluck(:indicator)
+    :operations => JSON.parse(Operation.all.to_json(:include => { :data => { :include => [:indicator, :ppg]}})),
+    :impact_indicators => ImpactIndicator.all,
+    :perf_indicators => PerfIndicator.all
   }.to_json
 end

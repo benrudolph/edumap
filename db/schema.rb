@@ -10,47 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130709122030) do
+ActiveRecord::Schema.define(version: 20130710131302) do
 
   create_table "actions", force: true do |t|
     t.string "name"
   end
 
-  create_table "impact_indicators", force: true do |t|
-    t.string  "objective"
+  create_table "data", force: true do |t|
     t.string  "olbudget"
     t.string  "aolbudget"
-    t.string  "indicator"
     t.string  "baseline"
     t.string  "standard"
     t.string  "oltarget"
     t.string  "optarget"
     t.string  "myr"
     t.string  "yer"
+    t.string  "year"
+    t.integer "indicator_id"
+    t.string  "indicator_type"
+    t.integer "operation_id"
     t.integer "ppg_id"
+  end
+
+  create_table "impact_indicators", force: true do |t|
+    t.string "objective"
+    t.string "name"
   end
 
   create_table "operations", force: true do |t|
     t.string "country"
     t.string "iso"
-    t.string "year"
   end
 
   create_table "perf_indicators", force: true do |t|
-    t.string  "output"
-    t.string  "olbudget"
-    t.string  "aolbudget"
-    t.string  "indicator"
-    t.string  "oltarget"
-    t.string  "optarget"
-    t.string  "myr"
-    t.string  "yer"
-    t.integer "ppg_id"
+    t.string "output"
+    t.string "name"
   end
 
   create_table "ppgs", force: true do |t|
-    t.string  "name"
-    t.integer "operation_id"
+    t.string "name"
   end
 
 end

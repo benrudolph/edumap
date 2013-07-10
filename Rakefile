@@ -6,40 +6,40 @@ task :load do
 
   CSV.foreach('./raw/all.csv', :headers => true) do |row|
 
-    o = Operation.find_or_create_by_country_and_year(:country => row['Operation'], :year => row['Planningyear'])
-    ppg = Ppg.find_or_create_by_operation_id_and_name(:operation_id => o.id,
-                                                            :name => row['PPG'])
+    o = Operation.find_or_create_by(:country => row['Operation'])
+    ppg = Ppg.find_or_create_by(:name => row['PPG'])
 
     i = nil; p = nil
     # Must be impact indicator
     if row['Objective']
-      i = ImpactIndicator.create(:objective => row['Objective'],
-                                 :olbudget => row['OLBudgetImpact'],
-                                 :aolbudget => row['AOLBudgetImpact'],
-                                 :indicator => row['ImpactIndicator'],
-                                 :baseline => row['Baseline'],
-                                 :standard => row['Standard'],
-                                 :oltarget => row['TargetOL'],
-                                 :optarget => row['TargetOP'],
-                                 :myr => row['MYR'],
-                                 :yer => row['YER'])
+      i = ImpactIndicator.find_or_create_by(:objective => row['Objective'],
+                                 :name => row['ImpactIndicator'])
     elsif row['Output']
-      p = PerfIndicator.create(:output => row['Output'],
-                                 :olbudget => row['OLBudgetPer'],
-                                 :aolbudget => row['AOLBudgetPer'],
-                                 :indicator => row['PerformanceIndicator'],
-                                 :oltarget => row['TargetOLPer'],
-                                 :optarget => row['TargetOPPer'],
-                                 :myr => row['MYRPer'],
-                                 :yer => row['YERPer'])
+      p = PerfIndicator.find_or_create_by(:output => row['Output'],
+                                 :name => row['PerformanceIndicator'])
     end
 
-    o.ppgs << ppg
-    ppg.impact_indicators << i if i
-    ppg.perf_indicators << p if p
+    d = Datum.create(:yer => row['YER'],
+                     :olbudget => row['OLBudgetImpact'],
+                     :aolbudget => row['AOLBudgetImpact'],
+                     :baseline => row['Baseline'],
+                     :standard => row['Standard'],
+                     :oltarget => row['TargetOL'],
+                     :optarget => row['TargetOP'],
+                     :myr => row['MYR'],
+                     :year => row['Planningyear'])
+
+    d.indicator = i if i
+    d.indicator = p if p
+
+    d.operation = o
+    d.ppg = ppg
 
     o.save
     ppg.save
+    d.save
+    i.save if i
+    p.save if p
 
   end
 
@@ -47,10 +47,15 @@ end
 
 task :clear do
   puts "Clearing database"
-  Operation.destroy_all
-  Ppg.destroy_all
-  PerfIndicator.destroy_all
-  ImpactIndicator.destroy_all
+  Operation.delete_all
+  Ppg.delete_all
+  Datum.delete_all
+  PerfIndicator.delete_all
+  ImpactIndicator.delete_all
+end
+
+task :add_actions do
+
 end
 
 task :convert do

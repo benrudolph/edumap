@@ -1,17 +1,9 @@
 class Operation < ActiveRecord::Base
   attr_accessible :country
 
-  default_scope { includes(:ppgs) }
-
-  has_many :ppgs
+  has_many :data
 
   def self.public_models(options = {})
-    Operation.all.to_json({
-      :include => {
-        :ppgs => {
-          :include => [:impact_indicators, :perf_indicators]
-        }
-      }
-    })
+    Operation.all.to_json
   end
 end

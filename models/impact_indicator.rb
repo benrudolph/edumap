@@ -1,6 +1,7 @@
 class ImpactIndicator < ActiveRecord::Base
-  attr_accessible :objective, :olbudget, :aolbudget, :indicator, :baseline, :standard, :oltarget, :optarget, :myr, :yer
+  attr_accessible :objective, :name
 
   belongs_to :action
+  has_many :data
 
 end
