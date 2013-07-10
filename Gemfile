@@ -7,3 +7,4 @@ gem 'sinatra-activerecord'
 gem "sqlite3"
 gem 'rake'
 gem 'protected_attributes'
+gem 'json'

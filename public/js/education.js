@@ -13,8 +13,8 @@ Education.Routers.MainRouter = Backbone.Router.extend({
     window.manager = new Education.Models.Manager();
 
     // Change country selected
-    window.manager.on('change:country', function() {
-      console.log('change:country');
+    window.manager.on('change:iso', function() {
+      console.log('change:iso');
       this.leftpanel.renderIndicatorGraph();
       this.leftpanel.renderBudgetGraph();
       this.rightpanel.render();
@@ -30,10 +30,12 @@ Education.Routers.MainRouter = Backbone.Router.extend({
 
     queue()
       .defer(d3.json, 'data/world.json')
-      .defer(d3.json, 'data/real.json')
-      .await(function(error, world, countryData) {
+      .defer(d3.json, '/bootstrap')
+      .await(function(error, world, bootstrap) {
         this.countries = world.features;
-        this.countryData = countryData.countries;
+        this.operations = bootstrap.operations;
+        this.impactIndicators = bootstrap.impact_indicators
+        this.perfIndicators = bootstrap.perf_indicators
 
 
         this.world = new Education.Views.WorldView({
@@ -41,13 +43,15 @@ Education.Routers.MainRouter = Backbone.Router.extend({
         });
 
         this.rightpanel = new Education.Views.PanelRightView({
-          collection: new Education.Collections.Panel(this.countryData),
-          el: '#rightpanel'
+          collection: new Education.Collections.Panel(this.operations),
+          el: '#rightpanel',
         });
 
         this.leftpanel = new Education.Views.PanelLeftView({
-          collection: new Education.Collections.Panel(this.countryData),
-          el: '#leftpanel'
+          collection: new Education.Collections.Panel(this.operations),
+          el: '#leftpanel',
+          impactIndicators: this.impactIndicators,
+          perfIndicators: this.perfIndicators
         });
 
         $(document).foundation();

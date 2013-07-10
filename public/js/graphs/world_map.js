@@ -41,11 +41,11 @@ function map(config) {
 
     world
       .attr("class", function(d) {
-        return 'country' + (window.manager.get('countryISO') === d.id ? ' selected' : '');
+        return 'country' + (window.manager.get('iso') === d.id ? ' selected' : '');
       })
       .attr("d", path)
       .on('click', function(d) {
-        window.manager.set('countryISO', d.id);
+        window.manager.set('iso', d.id);
       })
   };
 

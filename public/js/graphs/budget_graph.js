@@ -8,11 +8,11 @@ function budgetGraph(config) {
 
     var x = d3.time.scale()
         .range([0, width])
-        .domain([parseDate('2012'), parseDate('2016')]);
+        .domain([parseDate('2012'), parseDate('2015')]);
 
     var y = d3.scale.linear()
         .range([height, 0])
-        .domain([0, 30000000]);
+        .domain([0, 5000000]);
 
     var data = config.data;
 
@@ -33,7 +33,15 @@ function budgetGraph(config) {
         return x(parseDate(d.year))
       })
       .y(function(d) {
-        return y(+d.budget)
+        var ppg = _.findWhere(d.ppgs, { name: window.manager.get('ppg') })
+        var indicator = _.findWhere(ppg[window.manager.get('indicatorType')],
+            { indicator: window.manager.get('indicator') })
+        if (!indicator) return y(0);
+        var totalBudget = +indicator.olbudget.replace(/,/g,'') + (+indicator.aolbudget.replace(/,/g,''));
+        //console.log('ol: ' + indicator.olbudget)
+        //console.log('aol: ' + indicator.aolbudget)
+        //console.log('total: ' + totalBudget)
+        return y(totalBudget)
       })
       .interpolate('cardinal');
 
@@ -68,12 +76,12 @@ function budgetGraph(config) {
       lines
         .attr('class', function(d) {
           var clazz = 'budget-line';
-          if (window.manager.get('countryISO') === d.countryISO)
+          if (window.manager.get('iso') === d.iso)
             clazz += ' selected';
           return clazz;
         })
         .on('click', function(d) {
-          window.manager.set('countryISO', d.countryISO);
+          window.manager.set('iso', d.iso);
         })
 
       lines

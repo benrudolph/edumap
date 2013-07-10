@@ -25,6 +25,9 @@ Education.Views.PanelLeftView = Backbone.View.extend({
       width: 270,
       height: 150
     };
+
+    this.impactIndicators = options.impactIndicators
+    this.perfIndicators = options.perfIndicators
     this.render();
   },
 
@@ -34,32 +37,9 @@ Education.Views.PanelLeftView = Backbone.View.extend({
     window.manager.set('indicator', this.$el.find('#indicator').val().toLowerCase());
   },
 
-  extractSeries: function(model, type) {
-    var series = _.find(this.getAction(model.toJSON()).indicators, function(indicator) {
-      return indicator.name === window.manager.get('indicator');
-    })[type];
-
-
-    //Add country iso to data
-    series.countryISO = model.get('iso');
-    return series;
-  },
-
-  getAction: function(country) {
-    return _.find(country.actions, function(action) {
-      return action.name === window.manager.get('action')
-    })
-  },
-
-  getIndicators: function() {
-
-  },
 
   render: function() {
-    var indicators = this.getAction(this.collection.findWhere({
-        'country': window.manager.get('country')
-      }).toJSON()).indicators;
-
+    var indicators = this.impactIndicators
     console.log(indicators);
 
     this.$el.html(this.template({
@@ -85,9 +65,21 @@ Education.Views.PanelLeftView = Backbone.View.extend({
   },
 
   renderBudgetGraph: function() {
-    this.budgetGraph.data(this.collection.map(function(d) {
-      return this.extractSeries(d, 'budgetseries');
-    }.bind(this)))
+    var countries = this.collection.map(function(d) { return d.get('iso') });
+    var countryData = [];
+    countries.forEach(function(d) {
+      countryData.push(this.collection.where({ iso: d })
+                           .filter(function(d) {
+                             var ppgs = d.get('ppgs');
+                             return _.find(ppgs, function(d) {
+                               return d.name === window.manager.get('ppg')
+                             });
+                           })
+                           .map(function(d) { return d.toJSON() }));
+    }.bind(this))
+    console.log(countryData)
+
+    this.budgetGraph.data(countryData)
     this.budgetGraph();
   },
 
@@ -98,10 +90,11 @@ Education.Views.PanelLeftView = Backbone.View.extend({
   },
 
   renderIndicatorGraph: function() {
+    var countryData = this.collection.filter(function (d) {
+      return d.get('iso') === window.manager.get('iso')
+    }).map(function(d) { return d.toJSON() })
     // Extracts indicator series that matches selected country
-    this.indicatorGraph.data( _.find(this.collection.map(function(d) {
-      return this.extractSeries(d, 'indicatorseries');
-    }.bind(this)), function(series) { return series.countryISO === window.manager.get('countryISO') }));
+    this.indicatorGraph.data(countryData);
 
     this.indicatorGraph();
   }
@@ -117,9 +110,9 @@ Education.Views.PanelRightView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(this.template(this.collection.findWhere({
-      iso: window.manager.get('countryISO')
-    }).toJSON()));
+    //this.$el.html(this.template(this.collection.findWhere({
+    //  iso: window.manager.get('countryISO')
+    //}).toJSON()));
     return this;
   }
 })

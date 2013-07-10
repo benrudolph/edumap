@@ -8,11 +8,11 @@ function indicatorGraph(config) {
 
     var x = d3.time.scale()
         .range([0, width])
-        .domain([parseDate('2012'), parseDate('2016')]);
+        .domain([parseDate('2012'), parseDate('2015')]);
 
     var y = d3.scale.linear()
         .range([height, 0])
-        .domain([0, 1]);
+        .domain([0, 100]);
 
     var data = config.data;
 
@@ -33,7 +33,11 @@ function indicatorGraph(config) {
         return x(parseDate(d.year))
       })
       .y(function(d) {
-        return y(+d.value)
+        var ppg = _.findWhere(d.ppgs, { name: window.manager.get('ppg') })
+        var indicator = _.findWhere(ppg[window.manager.get('indicatorType')],
+            { indicator: window.manager.get('indicator') })
+        if (!indicator) return 0;
+        return y(+indicator.standard)
       })
       .interpolate('cardinal');
 
@@ -61,12 +65,12 @@ function indicatorGraph(config) {
     function my() {
 
       var lines = svg.selectAll('.indicator-line')
-        .data(data)
+        .data([data])
 
       lines.enter().append('path')
 
       lines
-        .attr('class', function(d) { return 'indicator-line ' + d[0].type })
+        .attr('class', function(d) { return 'indicator-line ' /*+ d[0].type */})
 
       lines
         .transition()
