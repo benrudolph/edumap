@@ -30,13 +30,11 @@ function indicatorGraph(config) {
 
     var lineFn = d3.svg.line()
       .x(function(d) {
-        console.log('x:'+x(parseDate(d.year)))
-        console.log(d.year)
         return x(parseDate(d.year))
       })
       .y(function(d) {
-        console.log('y:'+y(+d[d.type]))
-        return y(+d[d.type])
+        console.log(+d[d.type])
+        return y(+(d[d.type].replace(/,/g,'')));
       })
       .interpolate('cardinal');
 

@@ -27,7 +27,8 @@ function budgetGraph(config) {
       .orient("left");
 
     var getTotalBudget = function(d) {
-      var totalBudget = +d.olbudget.replace(/,/g,'') + (+d.aolbudget.replace(/,/g,''));
+
+      var totalBudget = +(d.olbudget || '0').replace(/,/g,'') + (+(d.aolbudget || '0').replace(/,/g,''));
       return totalBudget;
     }
 
@@ -57,8 +58,7 @@ function budgetGraph(config) {
       y.domain([0, d3.max(data, function(d) {
         // d is array of data points
         // p is each country datum
-        var maxBudget = d3.max(d, function(p) { if (!p) console.log(d); return getTotalBudget(p) });
-        console.log(maxBudget)
+        var maxBudget = d3.max(d, function(p) { return getTotalBudget(p) });
         return maxBudget;
       })])
 
@@ -76,8 +76,14 @@ function budgetGraph(config) {
           .style("text-anchor", "end")
           .text("Price ($)");
 
+      // Need to figure out join!
       var lines = svg.selectAll('.budget-line')
         .data(data)
+
+      lines.sort(function(a,b) {
+        if (a.iso !== window.manager.get('iso')) return -1
+        else return 1
+      })
 
       lines.enter().append('path')
 
@@ -87,6 +93,9 @@ function budgetGraph(config) {
           if (window.manager.get('iso') === d.iso)
             clazz += ' selected';
           return clazz;
+        })
+        .attr('original-title', function(d) {
+          return d.iso
         })
         .on('click', function(d) {
           window.manager.set('iso', d.iso);
@@ -99,6 +108,28 @@ function budgetGraph(config) {
 
       lines.exit().remove();
 
+      $('.budget-line').tipsy({
+        html: true,
+        gravity: 's'
+      })
+
+      var points = svg.selectAll('.budget-point')
+        .data(_.flatten(data))
+
+      points.enter().append('circle');
+
+      points
+        .attr('class', function(d) {
+          var clazz = 'budget-point budget-point-' + d.iso;
+          if (window.manager.get('iso') === d.iso)
+            clazz += ' selected';
+          return clazz;
+        })
+        .attr('r', 2)
+        .attr('cx', function(d) { return x(parseDate(d.year)) })
+        .attr('cy', function(d) { return y(getTotalBudget(d)) })
+
+      points.exit().remove();
 
 
     }

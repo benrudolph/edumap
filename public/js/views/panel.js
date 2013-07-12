@@ -42,12 +42,12 @@ Education.Views.PanelLeftView = Backbone.View.extend({
   onIndicatorChange: function(e) {
     e.preventDefault();
     e.stopPropagation();
-    window.manager.set('indicator', this.$el.find('#indicator').val().toLowerCase());
+    window.manager.set('indicator', this.$el.find('#indicator').val());
   },
 
 
   render: function() {
-    var indicators = window.manager.get('indicatorType') === Education.Constants.INDICATOR.IMPACT ? this.impactIndicators : this.perfIndicators
+    var indicators = Education.Utils.getIndicators(window.manager.get('indicatorType'));
 
     this.$el.html(this.template({
       indicators: indicators
@@ -65,7 +65,12 @@ Education.Views.PanelLeftView = Backbone.View.extend({
   },
 
   // Just rerenders the indicator select
-  renderIndicators: function(indicators) {
+  renderIndicators: function() {
+    var indicators = Education.Utils.getIndicators(window.manager.get('indicatorType'));
+    var indicator = (_.findWhere(indicators, { name: window.manager.get('indicator') }) || indicators[0]).name;
+    console.log(_.findWhere(indicators, { name: window.manager.get('indicator') }))
+    console.log(indicator)
+    window.manager.set('indicator', indicator);
     this.$el.find('form.indicators').html(window.JST['panel/indicators']({ indicators: indicators }));
   },
 
@@ -77,6 +82,7 @@ Education.Views.PanelLeftView = Backbone.View.extend({
 
   renderBudgetGraph: function() {
     var countryData = [];
+    console.log('Budget Graph Rendering');
     countryData = this.collection.map(function(d) {
       data = d.get('data')
       data = _.filter(data, function(d) {
@@ -84,6 +90,7 @@ Education.Views.PanelLeftView = Backbone.View.extend({
             d.ppg.name === window.manager.get('ppg') &&
             d.indicator.name === window.manager.get('indicator')
       })
+      data = data.map(function(p) { p.iso = d.get('iso'); return p })
       data.iso = d.get('iso')
       return data
     }.bind(this))
@@ -100,27 +107,26 @@ Education.Views.PanelLeftView = Backbone.View.extend({
   },
 
   renderIndicatorGraph: function() {
+    console.log('Indicator Graph Rendering');
     var country = this.collection.findWhere({
       'iso': window.manager.get('iso')
     })
 
-    country.set('data', country.get('data').filter(function(d) {
+    var filteredData = country.get('data').filter(function(d) {
       return d.indicator.name === window.manager.get('indicator') &&
           d.ppg.name === window.manager.get('ppg')
-    }))
+    })
 
 
     var types = ['oltarget', 'optarget']
 
     var countryData = types.map(function(d) {
-      var datum = country.get('data').clone();
+      var datum = filteredData.clone();
       datum.forEach(function(p) { p.type = d; });
       return datum;
     }).filter(function(d) {
-      return d != []
+      return d.length > 0;
     })
-
-    console.log(countryData)
 
     this.indicatorGraph.data(countryData);
 

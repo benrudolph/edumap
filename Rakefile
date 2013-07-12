@@ -19,14 +19,14 @@ task :load do
                                  :name => row['PerformanceIndicator'])
     end
 
-    d = Datum.create(:yer => row['YER'],
-                     :olbudget => row['OLBudgetImpact'],
-                     :aolbudget => row['AOLBudgetImpact'],
+    d = Datum.create(:yer => (row['YER'] || row['YERPer']),
+                     :olbudget => (row['OLBudgetImpact'] || row['OLBudgetPer']),
+                     :aolbudget => (row['AOLBudgetImpact'] || row['AOLBudgetPer']),
                      :baseline => row['Baseline'],
                      :standard => row['Standard'],
-                     :oltarget => row['TargetOL'],
-                     :optarget => row['TargetOP'],
-                     :myr => row['MYR'],
+                     :oltarget => (row['TargetOL'] || row['TargetOLPer']),
+                     :optarget => (row['TargetOP'] || row['TargetOPPer']),
+                     :myr => (row['MYR'] || row['MYRPer']),
                      :year => row['Planningyear'])
 
     d.indicator = i if i
@@ -45,6 +45,13 @@ task :load do
 
 end
 
+task :all do
+  Rake::Task['clear'].invoke
+  Rake::Task['load'].invoke
+  Rake::Task['convert'].invoke
+  Rake::Task['delete_ROs'].invoke
+end
+
 task :clear do
   puts "Clearing database"
   Operation.delete_all
@@ -52,6 +59,10 @@ task :clear do
   Datum.delete_all
   PerfIndicator.delete_all
   ImpactIndicator.delete_all
+end
+
+task :delete_ROs do
+  Operation.destroy_all(:iso => nil)
 end
 
 task :add_actions do

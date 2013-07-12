@@ -23,17 +23,16 @@ Education.Routers.MainRouter = Backbone.Router.extend({
     // Change indicator Type
     window.manager.on('change:indicatorType', function() {
       // Change to first indicator in list
-      var indicators = window.manager.get('indicatorType') === Education.Constants.INDICATOR.IMPACT ? this.impactIndicators : this.perfIndicators
-      window.manager.set('indicator', indicators[0]);
-      this.leftpanel.renderIndicators(indicators);
+      this.leftpanel.renderIndicators();
 
     }.bind(this))
 
     // Change country selected
     window.manager.on('change:iso', function() {
-      console.log('change:iso');
+      console.log('change:iso ' + window.manager.get('iso'));
       this.leftpanel.renderIndicatorGraph();
       this.leftpanel.renderBudgetGraph();
+      this.leftpanel.renderIndicators();
       this.rightpanel.render();
       this.world.renderWorld();
     }.bind(this));
@@ -51,8 +50,6 @@ Education.Routers.MainRouter = Backbone.Router.extend({
       .await(function(error, world, bootstrap) {
         this.countries = world.features;
         this.operations = bootstrap.operations;
-        this.impactIndicators = Education.Utils.getIndicators(Education.Constants.INDICATOR.IMPACT);
-        this.perfIndicators = Education.Utils.getIndicators(Education.Constants.INDICATOR.PERF);
 
         this.world = new Education.Views.WorldView({
           collection: new Education.Collections.World(this.countries)
@@ -66,8 +63,6 @@ Education.Routers.MainRouter = Backbone.Router.extend({
         this.leftpanel = new Education.Views.PanelLeftView({
           collection: new Education.Collections.Panel(this.operations),
           el: '#leftpanel',
-          impactIndicators: this.impactIndicators,
-          perfIndicators: this.perfIndicators
         });
 
         $(document).foundation();
@@ -95,6 +90,12 @@ $(document).ready(function() {
 String.prototype.toTitleCase = function () {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };
+
+if(!String.prototype.trim) {
+  String.prototype.trim = function () {
+    return this.replace(/^\s+|\s+$/g,'');
+  };
+}
 
 Array.prototype.clone = function() {
 	return this.slice(0);
