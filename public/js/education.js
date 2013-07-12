@@ -3,7 +3,15 @@ window.Education = {
   Views: {},
   Routers: {},
   Collections: {},
-  Manager: {}
+  Manager: {},
+  Constants: {
+    INDICATOR: {
+      IMPACT: 'ImpactIndicator',
+      PERF: 'PerfIndicator'
+    }
+
+  },
+  Utils: {}
 }
 
 
@@ -15,7 +23,7 @@ Education.Routers.MainRouter = Backbone.Router.extend({
     // Change indicator Type
     window.manager.on('change:indicatorType', function() {
       // Change to first indicator in list
-      var indicators = window.manager.get('indicatorType') === 'impact_indicators' ? this.impactIndicators : this.perfIndicators
+      var indicators = window.manager.get('indicatorType') === Education.Constants.INDICATOR.IMPACT ? this.impactIndicators : this.perfIndicators
       window.manager.set('indicator', indicators[0]);
       this.leftpanel.renderIndicators(indicators);
 
@@ -43,9 +51,8 @@ Education.Routers.MainRouter = Backbone.Router.extend({
       .await(function(error, world, bootstrap) {
         this.countries = world.features;
         this.operations = bootstrap.operations;
-        this.impactIndicators = bootstrap.impact_indicators
-        this.perfIndicators = bootstrap.perf_indicators
-
+        this.impactIndicators = Education.Utils.getIndicators(Education.Constants.INDICATOR.IMPACT);
+        this.perfIndicators = Education.Utils.getIndicators(Education.Constants.INDICATOR.PERF);
 
         this.world = new Education.Views.WorldView({
           collection: new Education.Collections.World(this.countries)
