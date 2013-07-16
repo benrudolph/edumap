@@ -107,6 +107,22 @@
   stroke: red;
 }
 
+.olbudget-area {
+  opacity: .5;
+  fill: white;
+  pointer-events: none;
+}
+
+.aolbudget-area {
+  opacity: .5;
+  fill: green;
+  pointer-events: none;
+}
+
+.hidden {
+  opacity: 0;
+}
+
 /* End panel */
 
 .axis path,

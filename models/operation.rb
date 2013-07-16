@@ -1,5 +1,5 @@
 class Operation < ActiveRecord::Base
-  attr_accessible :country
+  attr_accessible :country, :lat, :lng
 
   has_many :data
 

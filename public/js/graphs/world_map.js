@@ -33,6 +33,7 @@ function map(config) {
   var down;
 
   function my() {
+    console.log('callin')
 
     world = svg.selectAll('.country')
       .data(data)
@@ -78,10 +79,6 @@ function map(config) {
 
   function mouseleave() {
     down = false;
-  }
-
-  function clip(d) {
-    return path(circle.clip(d));
   }
 
   my.data = function(_data) {

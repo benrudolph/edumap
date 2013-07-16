@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130710131302) do
+ActiveRecord::Schema.define(version: 20130715153913) do
 
   create_table "actions", force: true do |t|
     t.string "name"
@@ -38,8 +38,10 @@ ActiveRecord::Schema.define(version: 20130710131302) do
   end
 
   create_table "operations", force: true do |t|
-    t.string "country"
-    t.string "iso"
+    t.string  "country"
+    t.string  "iso"
+    t.integer "lng"
+    t.integer "lat"
   end
 
   create_table "perf_indicators", force: true do |t|

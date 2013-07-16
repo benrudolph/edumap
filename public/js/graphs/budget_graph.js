@@ -41,6 +41,16 @@ function budgetGraph(config) {
       })
       .interpolate('cardinal');
 
+    var areaOL = d3.svg.area()
+      .x(function(d) { return x(parseDate(d.year)); })
+      .y0(function(d) { return y(0); })
+      .y1(function(d) { return y(+(d.olbudget || '0').replace(/,/g,'')); })
+
+    var areaAOL = d3.svg.area()
+      .x(function(d) { return x(parseDate(d.year)); })
+      .y0(function(d) { return y(+(d.olbudget || '0').replace(/,/g,'')); })
+      .y1(function(d) { return y(getTotalBudget(d)); })
+
     var svg = selection.append('svg')
       .attr('width', config.width)
       .attr('height', config.height)
@@ -100,6 +110,14 @@ function budgetGraph(config) {
         .on('click', function(d) {
           window.manager.set('iso', d.iso);
         })
+        .on('mouseover', function(d) {
+          d3.select('.aolbudget-area-' + d.iso).classed('hidden', false);
+          d3.select('.olbudget-area-' + d.iso).classed('hidden', false);
+        })
+        .on('mouseout', function(d) {
+          d3.select('.aolbudget-area-' + d.iso).classed('hidden', true);
+          d3.select('.olbudget-area-' + d.iso).classed('hidden', true);
+        })
 
       lines
         .transition()
@@ -112,6 +130,28 @@ function budgetGraph(config) {
         html: true,
         gravity: 's'
       })
+
+      var areasOL = svg.selectAll('.olbudget-area')
+          .data(data)
+
+      areasOL.enter().append("path")
+
+      areasOL
+          .attr('class', function(d) { return 'olbudget-area hidden olbudget-area-' + d.iso })
+          .attr('d', areaOL)
+
+      areasOL.exit().remove();
+
+      var areasAOL = svg.selectAll('.aolbudget-area')
+          .data(data)
+
+      areasAOL.enter().append("path")
+
+      areasAOL
+          .attr('class', function(d) { return 'aolbudget-area hidden aolbudget-area-' + d.iso })
+          .attr('d', areaAOL)
+
+      areasAOL.exit().remove();
 
       var points = svg.selectAll('.budget-point')
         .data(_.flatten(data))
