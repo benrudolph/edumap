@@ -19,6 +19,15 @@ Education.Views.WorldView = Backbone.View.extend({
   },
 
   renderWorld: function() {
+    var datum;
+
+    var selected = d3.select('.country.' + window.manager.get('iso'));
+
+    if (!selected.empty()) {
+      datum = selected.datum();
+      console.log(datum.properties);
+    }
+    this.worldMap.rotation([-datum.properties.lng, -datum.properties.lat]);
     this.worldMap();
   },
 

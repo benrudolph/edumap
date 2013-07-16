@@ -33,7 +33,7 @@ function map(config) {
   var down;
 
   function my() {
-    console.log('callin')
+    projection.rotate(rotation);
 
     world = svg.selectAll('.country')
       .data(data)
@@ -42,7 +42,7 @@ function map(config) {
 
     world
       .attr("class", function(d) {
-        return 'country' + (window.manager.get('iso') === d.id ? ' selected' : '');
+        return 'country ' + d.id + (window.manager.get('iso') === d.id ? ' selected' : '');
       })
       .attr("d", path)
       .on('click', function(d) {
@@ -63,9 +63,9 @@ function map(config) {
       var deltax = -((m0[0] - m1[0]) / 2)
       var deltay = ((m0[1] - m1[1]) / 2)
       var current = projection.rotate();
-      var n = [current[0] + deltax, current[1] + deltay]
+      my.rotation([current[0] + deltax, current[1] + deltay]);
 
-      projection.rotate(n);
+
       my();
 
       // Set previous position
@@ -81,6 +81,11 @@ function map(config) {
     down = false;
   }
 
+  my.rotation = function(_rotation) {
+    if (!arguments) return rotation;
+    rotation = _rotation;
+    return rotation;
+  }
   my.data = function(_data) {
     if (!arguments) return data;
     data = _data;
