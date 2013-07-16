@@ -68,6 +68,74 @@ end
 
 task :add_actions do
 
+  actions = {
+    'learning achievements in primary school improved' => [
+      '% of primary school-aged children enrolled in primary education',
+      '# of children enrolled in primary education',
+      '% of children in grade 3 who transition to grade 4',
+      '% of grade 3 students who can read at grade 3 level (assessment)',
+      '# of grade 3 students who can read at grade 3 level',
+      '# of children per teacher',
+      '# of teachers with professional teaching qualifications'
+    ],
+    'safe learning environments in school ensured' => [
+      '% of schools that meet safe learning environment standards',
+      '% of teachers who are female',
+      '% of educational facilities that meet safety and accessibility standards',
+      '% of schools with safe access to separate latrines for boys and girls',
+      '% of schools that enforce a teacher code of conduct that has been developed in a participatory way',
+      '% of schools with a policy to use positive discipline methods (non-corporal punishment)',
+    ],
+    'access to formal secondary education opportunities improved' => [
+      '# of students enrolled secondary education',
+      '% of secondary school graduates (successful completion of final grade)',
+    ],
+    'access to higher education opportunities for refugee young people improved' => [
+      '# of PoC enrolled in UNHCR supported tertiary education programmes',
+      '# of PoC who receive tertiary education scholarships',
+      '% of youths aged 15-24 enrolled in certified livelihoods training',
+      '% of vocational and technical skills training students who are youths aged 15-24'
+    ],
+    'opportunities for lifelong and available education according to need are ensured' => [
+      '% of children aged 3-5 yrs enrolled in early childhood education',
+      '# of children aged 3-5 enrolled in early child hood education',
+      '% of youths aged 15-24 enrolled in certified livelihoods training',
+      '% of vocational and technical skills training students who are youths aged 15-24',
+      '# of education programmes with life skills initiatives',
+      '# of persons participating in vocational training',
+      '% of PoC aged 15-59 who are literate (survey)',
+      '# of PoC enrolled in literacy classes'
+    ],
+    'access to education opportunities during emergencies provided' => [
+      '% of PoC who benefit from emergency education during a UNHCR emergency response',
+      '% of preparedness plans that include emergency education (not in RF)'
+    ]
+    'quality and protective education ensured through partnerships' => [
+      '# of country programmes with a strong working partnership with the MoE',
+      'Extent persons of concern have access to national education systems',
+      '# of months this calendar year during which UNHCR has had an active relationship with the Ministry of Education',
+      '# of national authorities that have endorsed the UNHCR education strategy',
+      '# of PoC enrolled in language classes'
+    ],
+    'capacities of UNHCR personnel and partners developed' => [
+      '# of months this calendar year during which UNHCR has had an active relationship with the Ministry of Education',
+      '# of national authorities that have endorsed the UNHCR education strategy',
+      '# of PoC enrolled in language classes'
+    ],
+    'mechanisms for learning accountability built and strengthened' => [
+      '% of programmes who use data and impact monitoring',
+      '# of operations with baseline information on education',
+      '# of education programmes with logframes and M&E systems in place',
+      '# of operations that use EMIS'
+    ],
+    'education opportunities expanded through innovative use of ICT' => [
+      '% of programmes with access to at least one form of ITC in education',
+      '% of schools reporting an quality change in learning due to the use of ITC',
+      '% of primary and secondary schools providing students daily access to computers',
+      '% of primary ad secondary schools providing students daily access to e-books, tablets or other similar devices'
+    ]
+  }
+
 end
 
 task :add_latlng do
