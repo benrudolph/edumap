@@ -13,7 +13,7 @@ set :database, "sqlite3:///edumap.sqlite3"
 set :haml, :format => :html5
 
 get '/' do
-  haml :index
+  haml :index, :layout => :default
 end
 
 get '/bootstrap' do
@@ -24,4 +24,8 @@ get '/bootstrap' do
     :impact_indicators => ImpactIndicator.all,
     :perf_indicators => PerfIndicator.all
   }.to_json
+end
+
+get '/edit' do
+  haml :edit, :layout => :default
 end

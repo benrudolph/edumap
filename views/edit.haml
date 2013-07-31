@@ -1,0 +1,18 @@
+.row
+  %form
+    %fieldset
+      %legend Edit country data
+
+      .row
+        .large-12.columns
+          %label Country
+          %input#country-name{ :type => "text", :placeholder => "Country name" }
+
+%script{ :src => "js/vendor/jquery.js" }
+%script{ :src => "js/vendor/jquery.tipsy.js" }
+%script{ :src => "js/vendor/jquery.autocomplete.js" }
+%script{ :src => "js/foundation.min.js" }
+%script{ :src => "js/vendor/underscore.js" }
+%script{ :src => "js/vendor/backbone.js" }
+
+%script{ :src => "js/edit.js" }

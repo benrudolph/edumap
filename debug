@@ -1,0 +1,239 @@
+D, [2013-07-16T15:37:24.093837 #10027] DEBUG -- :   Action Load (0.1ms)  SELECT "actions".* FROM "actions" WHERE "actions"."name" = 'learning achievements in primary school improved' LIMIT 1
+D, [2013-07-16T15:37:24.098367 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of primary school-aged children enrolled in primary education' LIMIT 1
+D, [2013-07-16T15:37:24.105944 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of primary school-aged children enrolled in primary education' LIMIT 1
+Impact indicator exists for: % of primary school-aged children enrolled in primary education
+D, [2013-07-16T15:37:24.109953 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.115304 #10027] DEBUG -- :   SQL (2.3ms)  UPDATE "impact_indicators" SET "action_id" = ? WHERE "impact_indicators"."id" = 125  [["action_id", 1]]
+D, [2013-07-16T15:37:24.117907 #10027] DEBUG -- :    (2.3ms)  commit transaction
+D, [2013-07-16T15:37:24.118933 #10027] DEBUG -- :   ImpactIndicator Load (0.2ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of children enrolled in primary education' LIMIT 1
+D, [2013-07-16T15:37:24.119359 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of children enrolled in primary education' LIMIT 1
+Perf indicator exists for: # of children enrolled in primary education
+D, [2013-07-16T15:37:24.138910 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.140819 #10027] DEBUG -- :   SQL (0.4ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1070  [["action_id", 1]]
+D, [2013-07-16T15:37:24.141790 #10027] DEBUG -- :    (0.7ms)  commit transaction
+D, [2013-07-16T15:37:24.143158 #10027] DEBUG -- :   ImpactIndicator Load (0.2ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of children in grade 3 who transition to grade 4' LIMIT 1
+D, [2013-07-16T15:37:24.143793 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of children in grade 3 who transition to grade 4' LIMIT 1
+No indicator exists for: % of children in grade 3 who transition to grade 4
+D, [2013-07-16T15:37:24.144300 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of grade 3 students who can read at grade 3 level (assessment)' LIMIT 1
+D, [2013-07-16T15:37:24.144742 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of grade 3 students who can read at grade 3 level (assessment)' LIMIT 1
+No indicator exists for: % of grade 3 students who can read at grade 3 level (assessment)
+D, [2013-07-16T15:37:24.145175 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of grade 3 students who can read at grade 3 level' LIMIT 1
+D, [2013-07-16T15:37:24.145620 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of grade 3 students who can read at grade 3 level' LIMIT 1
+Perf indicator exists for: # of grade 3 students who can read at grade 3 level
+D, [2013-07-16T15:37:24.146011 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.147174 #10027] DEBUG -- :   SQL (0.4ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1176  [["action_id", 1]]
+D, [2013-07-16T15:37:24.148022 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.148595 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of children per teacher' LIMIT 1
+D, [2013-07-16T15:37:24.149169 #10027] DEBUG -- :   PerfIndicator Load (0.2ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of children per teacher' LIMIT 1
+Perf indicator exists for: # of children per teacher
+D, [2013-07-16T15:37:24.149475 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.150579 #10027] DEBUG -- :   SQL (0.3ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1110  [["action_id", 1]]
+D, [2013-07-16T15:37:24.151425 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.151962 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of teachers with professional teaching qualifications' LIMIT 1
+D, [2013-07-16T15:37:24.152544 #10027] DEBUG -- :   PerfIndicator Load (0.2ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of teachers with professional teaching qualifications' LIMIT 1
+Perf indicator exists for: # of teachers with professional teaching qualifications
+D, [2013-07-16T15:37:24.152874 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.154104 #10027] DEBUG -- :   SQL (0.4ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1140  [["action_id", 1]]
+D, [2013-07-16T15:37:24.155046 #10027] DEBUG -- :    (0.7ms)  commit transaction
+D, [2013-07-16T15:37:24.155936 #10027] DEBUG -- :   Action Load (0.2ms)  SELECT "actions".* FROM "actions" WHERE "actions"."name" = 'safe learning environments in school ensured' LIMIT 1
+D, [2013-07-16T15:37:24.156766 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.159406 #10027] DEBUG -- :   SQL (0.5ms)  INSERT INTO "actions" ("name") VALUES (?)  [["name", "safe learning environments in school ensured"]]
+D, [2013-07-16T15:37:24.160447 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.161771 #10027] DEBUG -- :   ImpactIndicator Load (0.2ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of schools that meet safe learning environment standards' LIMIT 1
+D, [2013-07-16T15:37:24.162465 #10027] DEBUG -- :   PerfIndicator Load (0.2ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of schools that meet safe learning environment standards' LIMIT 1
+No indicator exists for: % of schools that meet safe learning environment standards
+D, [2013-07-16T15:37:24.163024 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of teachers who are female' LIMIT 1
+D, [2013-07-16T15:37:24.163747 #10027] DEBUG -- :   PerfIndicator Load (0.2ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of teachers who are female' LIMIT 1
+Impact indicator exists for: % of teachers who are female
+D, [2013-07-16T15:37:24.164464 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.165838 #10027] DEBUG -- :   SQL (0.4ms)  UPDATE "impact_indicators" SET "action_id" = ? WHERE "impact_indicators"."id" = 121  [["action_id", 2]]
+D, [2013-07-16T15:37:24.166659 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.167398 #10027] DEBUG -- :   ImpactIndicator Load (0.2ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of educational facilities that meet safety and accessibility standards' LIMIT 1
+D, [2013-07-16T15:37:24.168050 #10027] DEBUG -- :   PerfIndicator Load (0.2ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of educational facilities that meet safety and accessibility standards' LIMIT 1
+No indicator exists for: % of educational facilities that meet safety and accessibility standards
+D, [2013-07-16T15:37:24.168623 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of schools with safe access to separate latrines for boys and girls' LIMIT 1
+D, [2013-07-16T15:37:24.169175 #10027] DEBUG -- :   PerfIndicator Load (0.2ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of schools with safe access to separate latrines for boys and girls' LIMIT 1
+Perf indicator exists for: % of schools with safe access to separate latrines for boys and girls
+D, [2013-07-16T15:37:24.169853 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.171149 #10027] DEBUG -- :   SQL (0.4ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1170  [["action_id", 2]]
+D, [2013-07-16T15:37:24.172000 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.172692 #10027] DEBUG -- :   ImpactIndicator Load (0.2ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of schools that enforce a teacher code of conduct that has been developed in a participatory way' LIMIT 1
+D, [2013-07-16T15:37:24.173337 #10027] DEBUG -- :   PerfIndicator Load (0.2ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of schools that enforce a teacher code of conduct that has been developed in a participatory way' LIMIT 1
+Perf indicator exists for: % of schools that enforce a teacher code of conduct that has been developed in a participatory way
+D, [2013-07-16T15:37:24.173655 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.174503 #10027] DEBUG -- :   SQL (0.3ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1171  [["action_id", 2]]
+D, [2013-07-16T15:37:24.175309 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.175923 #10027] DEBUG -- :   ImpactIndicator Load (0.2ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of schools with a policy to use positive discipline methods (non-corporal punishment)' LIMIT 1
+D, [2013-07-16T15:37:24.176552 #10027] DEBUG -- :   PerfIndicator Load (0.2ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of schools with a policy to use positive discipline methods (non-corporal punishment)' LIMIT 1
+Perf indicator exists for: % of schools with a policy to use positive discipline methods (non-corporal punishment)
+D, [2013-07-16T15:37:24.176853 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.177840 #10027] DEBUG -- :   SQL (0.3ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1186  [["action_id", 2]]
+D, [2013-07-16T15:37:24.178657 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.179451 #10027] DEBUG -- :   Action Load (0.2ms)  SELECT "actions".* FROM "actions" WHERE "actions"."name" = 'access to formal secondary education opportunities improved' LIMIT 1
+D, [2013-07-16T15:37:24.180011 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.195019 #10027] DEBUG -- :   SQL (0.4ms)  INSERT INTO "actions" ("name") VALUES (?)  [["name", "access to formal secondary education opportunities improved"]]
+D, [2013-07-16T15:37:24.196009 #10027] DEBUG -- :    (0.7ms)  commit transaction
+D, [2013-07-16T15:37:24.196790 #10027] DEBUG -- :   ImpactIndicator Load (0.2ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of students enrolled secondary education' LIMIT 1
+D, [2013-07-16T15:37:24.197429 #10027] DEBUG -- :   PerfIndicator Load (0.2ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of students enrolled secondary education' LIMIT 1
+No indicator exists for: # of students enrolled secondary education
+D, [2013-07-16T15:37:24.198002 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of secondary school graduates (successful completion of final grade)' LIMIT 1
+D, [2013-07-16T15:37:24.198607 #10027] DEBUG -- :   PerfIndicator Load (0.2ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of secondary school graduates (successful completion of final grade)' LIMIT 1
+No indicator exists for: % of secondary school graduates (successful completion of final grade)
+D, [2013-07-16T15:37:24.199184 #10027] DEBUG -- :   Action Load (0.1ms)  SELECT "actions".* FROM "actions" WHERE "actions"."name" = 'access to higher education opportunities for refugee young people improved' LIMIT 1
+D, [2013-07-16T15:37:24.199626 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.200579 #10027] DEBUG -- :   SQL (0.3ms)  INSERT INTO "actions" ("name") VALUES (?)  [["name", "access to higher education opportunities for refugee young people improved"]]
+D, [2013-07-16T15:37:24.201387 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.201901 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of PoC enrolled in UNHCR supported tertiary education programmes' LIMIT 1
+D, [2013-07-16T15:37:24.202301 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of PoC enrolled in UNHCR supported tertiary education programmes' LIMIT 1
+Perf indicator exists for: # of PoC enrolled in UNHCR supported tertiary education programmes
+D, [2013-07-16T15:37:24.202786 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.204012 #10027] DEBUG -- :   SQL (0.4ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1155  [["action_id", 4]]
+D, [2013-07-16T15:37:24.204874 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.205532 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of PoC who receive tertiary education scholarships' LIMIT 1
+D, [2013-07-16T15:37:24.206001 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of PoC who receive tertiary education scholarships' LIMIT 1
+Perf indicator exists for: # of PoC who receive tertiary education scholarships
+D, [2013-07-16T15:37:24.206290 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.207448 #10027] DEBUG -- :   SQL (0.4ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1130  [["action_id", 4]]
+D, [2013-07-16T15:37:24.208272 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.208783 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of youths aged 15-24 enrolled in certified livelihoods training' LIMIT 1
+D, [2013-07-16T15:37:24.209166 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of youths aged 15-24 enrolled in certified livelihoods training' LIMIT 1
+No indicator exists for: % of youths aged 15-24 enrolled in certified livelihoods training
+D, [2013-07-16T15:37:24.209529 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of vocational and technical skills training students who are youths aged 15-24' LIMIT 1
+D, [2013-07-16T15:37:24.209878 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of vocational and technical skills training students who are youths aged 15-24' LIMIT 1
+No indicator exists for: % of vocational and technical skills training students who are youths aged 15-24
+D, [2013-07-16T15:37:24.210239 #10027] DEBUG -- :   Action Load (0.1ms)  SELECT "actions".* FROM "actions" WHERE "actions"."name" = 'opportunities for lifelong and available education according to need are ensured' LIMIT 1
+D, [2013-07-16T15:37:24.210538 #10027] DEBUG -- :    (0.0ms)  begin transaction
+D, [2013-07-16T15:37:24.211220 #10027] DEBUG -- :   SQL (0.2ms)  INSERT INTO "actions" ("name") VALUES (?)  [["name", "opportunities for lifelong and available education according to need are ensured"]]
+D, [2013-07-16T15:37:24.211996 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.212458 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of children aged 3-5 yrs enrolled in early childhood education' LIMIT 1
+D, [2013-07-16T15:37:24.212914 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of children aged 3-5 yrs enrolled in early childhood education' LIMIT 1
+Impact indicator exists for: % of children aged 3-5 yrs enrolled in early childhood education
+D, [2013-07-16T15:37:24.213262 #10027] DEBUG -- :    (0.0ms)  begin transaction
+D, [2013-07-16T15:37:24.214067 #10027] DEBUG -- :   SQL (0.2ms)  UPDATE "impact_indicators" SET "action_id" = ? WHERE "impact_indicators"."id" = 116  [["action_id", 5]]
+D, [2013-07-16T15:37:24.214742 #10027] DEBUG -- :    (0.5ms)  commit transaction
+D, [2013-07-16T15:37:24.215191 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of children aged 3-5 enrolled in early child hood education' LIMIT 1
+D, [2013-07-16T15:37:24.215572 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of children aged 3-5 enrolled in early child hood education' LIMIT 1
+No indicator exists for: # of children aged 3-5 enrolled in early child hood education
+D, [2013-07-16T15:37:24.215919 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of youths aged 15-24 enrolled in certified livelihoods training' LIMIT 1
+D, [2013-07-16T15:37:24.216260 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of youths aged 15-24 enrolled in certified livelihoods training' LIMIT 1
+No indicator exists for: % of youths aged 15-24 enrolled in certified livelihoods training
+D, [2013-07-16T15:37:24.216596 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of vocational and technical skills training students who are youths aged 15-24' LIMIT 1
+D, [2013-07-16T15:37:24.216939 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of vocational and technical skills training students who are youths aged 15-24' LIMIT 1
+No indicator exists for: % of vocational and technical skills training students who are youths aged 15-24
+D, [2013-07-16T15:37:24.217272 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of education programmes with life skills initiatives' LIMIT 1
+D, [2013-07-16T15:37:24.217609 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of education programmes with life skills initiatives' LIMIT 1
+Perf indicator exists for: # of education programmes with life skills initiatives
+D, [2013-07-16T15:37:24.218112 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.218909 #10027] DEBUG -- :   SQL (0.2ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1132  [["action_id", 5]]
+D, [2013-07-16T15:37:24.219756 #10027] DEBUG -- :    (0.7ms)  commit transaction
+D, [2013-07-16T15:37:24.220457 #10027] DEBUG -- :   ImpactIndicator Load (0.2ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of persons participating in vocational training' LIMIT 1
+D, [2013-07-16T15:37:24.221054 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of persons participating in vocational training' LIMIT 1
+Perf indicator exists for: # of persons participating in vocational training
+D, [2013-07-16T15:37:24.221384 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.222510 #10027] DEBUG -- :   SQL (0.3ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1081  [["action_id", 5]]
+D, [2013-07-16T15:37:24.223256 #10027] DEBUG -- :    (0.5ms)  commit transaction
+D, [2013-07-16T15:37:24.223916 #10027] DEBUG -- :   ImpactIndicator Load (0.2ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of PoC aged 15-59 who are literate (survey)' LIMIT 1
+D, [2013-07-16T15:37:24.224326 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of PoC aged 15-59 who are literate (survey)' LIMIT 1
+No indicator exists for: % of PoC aged 15-59 who are literate (survey)
+D, [2013-07-16T15:37:24.224715 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of PoC enrolled in literacy classes' LIMIT 1
+D, [2013-07-16T15:37:24.225094 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of PoC enrolled in literacy classes' LIMIT 1
+Perf indicator exists for: # of PoC enrolled in literacy classes
+D, [2013-07-16T15:37:24.225360 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.226380 #10027] DEBUG -- :   SQL (0.3ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1151  [["action_id", 5]]
+D, [2013-07-16T15:37:24.227054 #10027] DEBUG -- :    (0.5ms)  commit transaction
+D, [2013-07-16T15:37:24.227743 #10027] DEBUG -- :   Action Load (0.2ms)  SELECT "actions".* FROM "actions" WHERE "actions"."name" = 'access to education opportunities during emergencies provided' LIMIT 1
+D, [2013-07-16T15:37:24.228216 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.229222 #10027] DEBUG -- :   SQL (0.3ms)  INSERT INTO "actions" ("name") VALUES (?)  [["name", "access to education opportunities during emergencies provided"]]
+D, [2013-07-16T15:37:24.230040 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.230600 #10027] DEBUG -- :   ImpactIndicator Load (0.2ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of PoC who benefit from emergency education during a UNHCR emergency response' LIMIT 1
+D, [2013-07-16T15:37:24.231257 #10027] DEBUG -- :   PerfIndicator Load (0.2ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of PoC who benefit from emergency education during a UNHCR emergency response' LIMIT 1
+No indicator exists for: % of PoC who benefit from emergency education during a UNHCR emergency response
+D, [2013-07-16T15:37:24.244432 #10027] DEBUG -- :   ImpactIndicator Load (0.2ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of preparedness plans that include emergency education (not in RF)' LIMIT 1
+D, [2013-07-16T15:37:24.244873 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of preparedness plans that include emergency education (not in RF)' LIMIT 1
+No indicator exists for: % of preparedness plans that include emergency education (not in RF)
+D, [2013-07-16T15:37:24.245247 #10027] DEBUG -- :   Action Load (0.1ms)  SELECT "actions".* FROM "actions" WHERE "actions"."name" = 'quality and protective education ensured through partnerships' LIMIT 1
+D, [2013-07-16T15:37:24.245541 #10027] DEBUG -- :    (0.0ms)  begin transaction
+D, [2013-07-16T15:37:24.246252 #10027] DEBUG -- :   SQL (0.3ms)  INSERT INTO "actions" ("name") VALUES (?)  [["name", "quality and protective education ensured through partnerships"]]
+D, [2013-07-16T15:37:24.246930 #10027] DEBUG -- :    (0.5ms)  commit transaction
+D, [2013-07-16T15:37:24.247381 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of country programmes with a strong working partnership with the MoE' LIMIT 1
+D, [2013-07-16T15:37:24.247767 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of country programmes with a strong working partnership with the MoE' LIMIT 1
+No indicator exists for: # of country programmes with a strong working partnership with the MoE
+D, [2013-07-16T15:37:24.248110 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = 'Extent persons of concern have access to national education systems' LIMIT 1
+D, [2013-07-16T15:37:24.248517 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = 'Extent persons of concern have access to national education systems' LIMIT 1
+Impact indicator exists for: Extent persons of concern have access to national education systems
+D, [2013-07-16T15:37:24.248859 #10027] DEBUG -- :    (0.0ms)  begin transaction
+D, [2013-07-16T15:37:24.249595 #10027] DEBUG -- :   SQL (0.2ms)  UPDATE "impact_indicators" SET "action_id" = ? WHERE "impact_indicators"."id" = 124  [["action_id", 7]]
+D, [2013-07-16T15:37:24.250251 #10027] DEBUG -- :    (0.5ms)  commit transaction
+D, [2013-07-16T15:37:24.250651 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of months this calendar year during which UNHCR has had an active relationship with the Ministry of Education' LIMIT 1
+D, [2013-07-16T15:37:24.251031 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of months this calendar year during which UNHCR has had an active relationship with the Ministry of Education' LIMIT 1
+Perf indicator exists for: # of months this calendar year during which UNHCR has had an active relationship with the Ministry of Education
+D, [2013-07-16T15:37:24.251407 #10027] DEBUG -- :    (0.0ms)  begin transaction
+D, [2013-07-16T15:37:24.252139 #10027] DEBUG -- :   SQL (0.2ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1129  [["action_id", 7]]
+D, [2013-07-16T15:37:24.252905 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.253480 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of national authorities that have endorsed the UNHCR education strategy' LIMIT 1
+D, [2013-07-16T15:37:24.253965 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of national authorities that have endorsed the UNHCR education strategy' LIMIT 1
+Perf indicator exists for: # of national authorities that have endorsed the UNHCR education strategy
+D, [2013-07-16T15:37:24.254260 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.255230 #10027] DEBUG -- :   SQL (0.3ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1161  [["action_id", 7]]
+D, [2013-07-16T15:37:24.256034 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.256675 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of PoC enrolled in language classes' LIMIT 1
+D, [2013-07-16T15:37:24.257277 #10027] DEBUG -- :   PerfIndicator Load (0.2ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of PoC enrolled in language classes' LIMIT 1
+Perf indicator exists for: # of PoC enrolled in language classes
+D, [2013-07-16T15:37:24.257594 #10027] DEBUG -- :    (0.1ms)  begin transaction
+D, [2013-07-16T15:37:24.258428 #10027] DEBUG -- :   SQL (0.2ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1159  [["action_id", 7]]
+D, [2013-07-16T15:37:24.259120 #10027] DEBUG -- :    (0.5ms)  commit transaction
+D, [2013-07-16T15:37:24.259596 #10027] DEBUG -- :   Action Load (0.1ms)  SELECT "actions".* FROM "actions" WHERE "actions"."name" = 'capacities of UNHCR personnel and partners developed' LIMIT 1
+D, [2013-07-16T15:37:24.259891 #10027] DEBUG -- :    (0.0ms)  begin transaction
+D, [2013-07-16T15:37:24.260506 #10027] DEBUG -- :   SQL (0.2ms)  INSERT INTO "actions" ("name") VALUES (?)  [["name", "capacities of UNHCR personnel and partners developed"]]
+D, [2013-07-16T15:37:24.261219 #10027] DEBUG -- :    (0.5ms)  commit transaction
+D, [2013-07-16T15:37:24.261724 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of months this calendar year during which UNHCR has had an active relationship with the Ministry of Education' LIMIT 1
+D, [2013-07-16T15:37:24.262113 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of months this calendar year during which UNHCR has had an active relationship with the Ministry of Education' LIMIT 1
+Perf indicator exists for: # of months this calendar year during which UNHCR has had an active relationship with the Ministry of Education
+D, [2013-07-16T15:37:24.262508 #10027] DEBUG -- :    (0.0ms)  begin transaction
+D, [2013-07-16T15:37:24.263589 #10027] DEBUG -- :   SQL (0.3ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1129  [["action_id", 8]]
+D, [2013-07-16T15:37:24.264401 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.264853 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of national authorities that have endorsed the UNHCR education strategy' LIMIT 1
+D, [2013-07-16T15:37:24.265279 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of national authorities that have endorsed the UNHCR education strategy' LIMIT 1
+Perf indicator exists for: # of national authorities that have endorsed the UNHCR education strategy
+D, [2013-07-16T15:37:24.265494 #10027] DEBUG -- :    (0.0ms)  begin transaction
+D, [2013-07-16T15:37:24.266190 #10027] DEBUG -- :   SQL (0.2ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1161  [["action_id", 8]]
+D, [2013-07-16T15:37:24.266895 #10027] DEBUG -- :    (0.6ms)  commit transaction
+D, [2013-07-16T15:37:24.267339 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of PoC enrolled in language classes' LIMIT 1
+D, [2013-07-16T15:37:24.267719 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of PoC enrolled in language classes' LIMIT 1
+Perf indicator exists for: # of PoC enrolled in language classes
+D, [2013-07-16T15:37:24.267916 #10027] DEBUG -- :    (0.0ms)  begin transaction
+D, [2013-07-16T15:37:24.268563 #10027] DEBUG -- :   SQL (0.2ms)  UPDATE "perf_indicators" SET "action_id" = ? WHERE "perf_indicators"."id" = 1159  [["action_id", 8]]
+D, [2013-07-16T15:37:24.269236 #10027] DEBUG -- :    (0.5ms)  commit transaction
+D, [2013-07-16T15:37:24.269665 #10027] DEBUG -- :   Action Load (0.1ms)  SELECT "actions".* FROM "actions" WHERE "actions"."name" = 'mechanisms for learning accountability built and strengthened' LIMIT 1
+D, [2013-07-16T15:37:24.269946 #10027] DEBUG -- :    (0.0ms)  begin transaction
+D, [2013-07-16T15:37:24.270551 #10027] DEBUG -- :   SQL (0.2ms)  INSERT INTO "actions" ("name") VALUES (?)  [["name", "mechanisms for learning accountability built and strengthened"]]
+D, [2013-07-16T15:37:24.271246 #10027] DEBUG -- :    (0.5ms)  commit transaction
+D, [2013-07-16T15:37:24.271716 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of programmes who use data and impact monitoring' LIMIT 1
+D, [2013-07-16T15:37:24.272114 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of programmes who use data and impact monitoring' LIMIT 1
+Press ENTER or type command to continue
+No indicator exists for: % of programmes who use data and impact monitoring
+D, [2013-07-16T15:37:24.272471 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of operations with baseline information on education' LIMIT 1
+D, [2013-07-16T15:37:24.272825 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of operations with baseline information on education' LIMIT 1
+No indicator exists for: # of operations with baseline information on education
+D, [2013-07-16T15:37:24.273171 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of education programmes with logframes and M&E systems in place' LIMIT 1
+D, [2013-07-16T15:37:24.273519 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of education programmes with logframes and M&E systems in place' LIMIT 1
+No indicator exists for: # of education programmes with logframes and M&E systems in place
+D, [2013-07-16T15:37:24.273856 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '# of operations that use EMIS' LIMIT 1
+D, [2013-07-16T15:37:24.274198 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '# of operations that use EMIS' LIMIT 1
+No indicator exists for: # of operations that use EMIS
+D, [2013-07-16T15:37:24.274543 #10027] DEBUG -- :   Action Load (0.1ms)  SELECT "actions".* FROM "actions" WHERE "actions"."name" = 'education opportunities expanded through innovative use of ICT' LIMIT 1
+D, [2013-07-16T15:37:24.274820 #10027] DEBUG -- :    (0.0ms)  begin transaction
+D, [2013-07-16T15:37:24.275470 #10027] DEBUG -- :   SQL (0.2ms)  INSERT INTO "actions" ("name") VALUES (?)  [["name", "education opportunities expanded through innovative use of ICT"]]
+D, [2013-07-16T15:37:24.276141 #10027] DEBUG -- :    (0.5ms)  commit transaction
+D, [2013-07-16T15:37:24.276596 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of programmes with access to at least one form of ITC in education' LIMIT 1
+D, [2013-07-16T15:37:24.276993 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of programmes with access to at least one form of ITC in education' LIMIT 1
+No indicator exists for: % of programmes with access to at least one form of ITC in education
+D, [2013-07-16T15:37:24.277338 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of schools reporting an quality change in learning due to the use of ITC' LIMIT 1
+D, [2013-07-16T15:37:24.277830 #10027] DEBUG -- :   PerfIndicator Load (0.2ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of schools reporting an quality change in learning due to the use of ITC' LIMIT 1
+No indicator exists for: % of schools reporting an quality change in learning due to the use of ITC
+D, [2013-07-16T15:37:24.278211 #10027] DEBUG -- :   ImpactIndicator Load (0.1ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of primary and secondary schools providing students daily access to computers' LIMIT 1
+D, [2013-07-16T15:37:24.278552 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of primary and secondary schools providing students daily access to computers' LIMIT 1
+No indicator exists for: % of primary and secondary schools providing students daily access to computers
+D, [2013-07-16T15:37:24.293696 #10027] DEBUG -- :   ImpactIndicator Load (0.2ms)  SELECT "impact_indicators".* FROM "impact_indicators" WHERE "impact_indicators"."name" = '% of primary ad secondary schools providing students daily access to e-books, tablets or other similar devices' LIMIT 1
+D, [2013-07-16T15:37:24.294214 #10027] DEBUG -- :   PerfIndicator Load (0.1ms)  SELECT "perf_indicators".* FROM "perf_indicators" WHERE "perf_indicators"."name" = '% of primary ad secondary schools providing students daily access to e-books, tablets or other similar devices' LIMIT 1
+No indicator exists for: % of primary ad secondary schools providing students daily access to e-books, tablets or other similar devices
