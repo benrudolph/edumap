@@ -24,6 +24,15 @@ window.JST['panel/rightpanel'] = _.template([
   '</div>'
 ].join(''));
 
+window.JST['panel/ppgs'] = _.template([
+  '<label for="ppg" class="left">PPGs</label>',
+  '<select id="ppg">',
+    '<% for (var i = 0; i < ppgs.length; i++) { %>',
+    '<option><%= ppgs[i].name %></option>',
+    '<% } %>',
+  '</select>',
+].join(''));
+
 window.JST['panel/indicators'] = _.template([
   '<label for="indicator" class="left">Indicator</label>',
   '<select id="indicator">',

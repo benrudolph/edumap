@@ -60,6 +60,7 @@ task :clear do
   Datum.delete_all
   PerfIndicator.delete_all
   ImpactIndicator.delete_all
+  Action.delete_all
 end
 
 task :delete_ROs do
@@ -84,11 +85,11 @@ task :add_actions do
       '% of educational facilities that meet safety and accessibility standards',
       '% of schools with safe access to separate latrines for boys and girls',
       '% of schools that enforce a teacher code of conduct that has been developed in a participatory way',
-      '% of schools with a policy to use positive discipline methods (non-corporal punishment)',
+      '% of schools with a policy to use positive discipline methods (non-corporal punishment)'
     ],
     'access to formal secondary education opportunities improved' => [
       '# of students enrolled secondary education',
-      '% of secondary school graduates (successful completion of final grade)',
+      '% of secondary school graduates (successful completion of final grade)'
     ],
     'access to higher education opportunities for refugee young people improved' => [
       '# of PoC enrolled in UNHCR supported tertiary education programmes',
@@ -109,7 +110,7 @@ task :add_actions do
     'access to education opportunities during emergencies provided' => [
       '% of PoC who benefit from emergency education during a UNHCR emergency response',
       '% of preparedness plans that include emergency education (not in RF)'
-    ]
+    ],
     'quality and protective education ensured through partnerships' => [
       '# of country programmes with a strong working partnership with the MoE',
       'Extent persons of concern have access to national education systems',
@@ -135,6 +136,26 @@ task :add_actions do
       '% of primary ad secondary schools providing students daily access to e-books, tablets or other similar devices'
     ]
   }
+
+  actions.each_pair do |name, indicators|
+    a = Action.find_or_create_by(:name => name)
+
+    indicators.each do |indicator|
+      i = ImpactIndicator.find_by(:name => indicator)
+      p = PerfIndicator.find_by(:name => indicator)
+
+      puts "No indicator exists for: #{indicator}" if !i and !p
+      puts "Both Impact & Perf indicator exists for: #{indicator}" if i and p
+      puts "Impact indicator exists for: #{indicator}" if i
+      puts "Perf indicator exists for: #{indicator}" if p
+
+      if (i && !p) || (p && !i)
+        a.impact_indicators << i if i
+        a.perf_indicators << p if p
+      end
+    end
+
+  end
 
 end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130715153913) do
+ActiveRecord::Schema.define(version: 20130716132701) do
 
   create_table "actions", force: true do |t|
     t.string "name"
@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(version: 20130715153913) do
   end
 
   create_table "impact_indicators", force: true do |t|
-    t.string "objective"
-    t.string "name"
+    t.string  "objective"
+    t.string  "name"
+    t.integer "action_id"
   end
 
   create_table "operations", force: true do |t|
@@ -45,8 +46,9 @@ ActiveRecord::Schema.define(version: 20130715153913) do
   end
 
   create_table "perf_indicators", force: true do |t|
-    t.string "output"
-    t.string "name"
+    t.string  "output"
+    t.string  "name"
+    t.integer "action_id"
   end
 
   create_table "ppgs", force: true do |t|
